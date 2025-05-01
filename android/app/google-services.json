@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "874772295278",
+    "project_id": "hand-sign-app",
+    "storage_bucket": "hand-sign-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874772295278:android:391ad731c5f2535bfd407f",
+        "android_client_info": {
+          "package_name": "com.example.hand_sign"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzidwwvVOimOWRZ0--I5097wyGAOSKL-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874772295278:android:cbfc408ed3ad0ac4fd407f",
+        "android_client_info": {
+          "package_name": "com.example.sign_language_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzidwwvVOimOWRZ0--I5097wyGAOSKL-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

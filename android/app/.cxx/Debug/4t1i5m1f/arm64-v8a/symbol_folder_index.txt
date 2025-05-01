@@ -1,0 +1,1 @@
+C:\Users\NITRO\AndroidStudioProjects\hand-sign-app\build\app\intermediates\cxx\Debug\4t1i5m1f\obj\arm64-v8a

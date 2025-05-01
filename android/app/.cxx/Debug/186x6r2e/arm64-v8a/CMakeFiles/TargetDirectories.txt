@@ -1,0 +1,2 @@
+C:/Users/NITRO/AndroidStudioProjects/hand-sign-app/android/app/.cxx/Debug/186x6r2e/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/NITRO/AndroidStudioProjects/hand-sign-app/android/app/.cxx/Debug/186x6r2e/arm64-v8a/CMakeFiles/rebuild_cache.dir
