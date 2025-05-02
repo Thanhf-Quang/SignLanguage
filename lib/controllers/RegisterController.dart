@@ -17,35 +17,35 @@ class RegisterController{
     final passwordRegex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{6,}$');
 
     if(username.isEmpty || phone.isEmpty || email.isEmpty || password.isEmpty || rePass.isEmpty) {
-      return "Vui lòng điền đầy đủ thông tin!";
+      return "Please fill in all required fields!";
     }
 
     if(!usernameRegex.hasMatch(username)){
-      return "Username không được chứa ký tự đặc biệt";
+      return "Username cannot contain special characters.";
     }
 
     if(!phoneRegex.hasMatch(phone)){
-      return "Số điện thoại chỉ được chứa các chữ số!";
+      return "Phone number can only contain digits!";
     }
 
     if(phone.length != 10){
-      return "Độ dài số điện thoại chỉ được bằng 10!";
+      return "Phone number must be 10 digits long!";
     }
 
     if (!emailRegex.hasMatch(email)) {
-      return "Email không đúng định dạng.";
+      return "Invalid email format.";
     }
 
     if (password != rePass) {
-      return "Mật khẩu và xác nhận mật khẩu không khớp.";
+      return "Passwords do not match.";
     }
 
     if (!passwordRegex.hasMatch(password)) {
-      return "Mật khẩu phải chứa ít nhất 1 chữ hoa, 1 chữ thường và 1 ký tự đặc biệt.";
+      return "Password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 special character.";
     }
 
     if(password.length < 8 ){
-      return "Mật khẩu phải chứa ít nhất 8 ký tự!";
+      return "Password must be at least 8 characters long!";
     }
     return null;
   }

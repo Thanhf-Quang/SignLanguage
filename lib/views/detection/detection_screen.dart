@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import '../controllers/detection_controller.dart';
+import '../../controllers/detection_controller.dart';
 
 Timer? _timer;
 String recognizedText = "";
@@ -57,7 +57,7 @@ class _DetectionScreenState extends State<DetectionScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFFFFCF3),
-        title: Text('Nhận Diện', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text('Hand Gesture Recognition', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: Container(

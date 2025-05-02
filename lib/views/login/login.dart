@@ -3,7 +3,7 @@ import '../../controllers/LoginController.dart';
 import '../../services/EmailService.dart';
 import '../../widgets/custom/customButton.dart';
 import '../register/registerScreen.dart';
-import '../login/forgotPassScreen.dart';
+import './forgotPassScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Vui lòng nhập đầy đủ email và mật khẩu.')),
+        SnackBar(content: Text('Please enter your email and password')),
       );
       return;
     }
@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     if(!emailRegex.hasMatch(email)){
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Email không hợp lệ!")),
+        SnackBar(content: Text("Invalid email address!")),
       );
       return;
     }
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         //forgot button
                         child: TextButton(
                             onPressed: () => resetPassword(_emailController.text.trim()),
-                            child: const Text("Quên mật khẩu?",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),)
+                            child: const Text("Forgot password?",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),)
                         ),
                         ),
                       const SizedBox(height: 20,),
@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Chưa có tài khoản?"),
+        const Text("Don't have an account?"),
         TextButton(
            // handle event register
             onPressed: (){
@@ -167,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 MaterialPageRoute(builder: (context) => RegisterScreen())
               );
             }, 
-            child: const Text("Đăng ký",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),))
+            child: const Text("Sign up",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),))
       ],
     );
   }

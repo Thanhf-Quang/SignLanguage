@@ -1,7 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'views/detection_screen.dart';
-import 'views/edit_profile.dart';
+import 'views/detection/detection_screen.dart';
+import 'views/profile/edit_profile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
