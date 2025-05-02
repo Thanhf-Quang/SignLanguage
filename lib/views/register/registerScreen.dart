@@ -60,7 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             const SizedBox(height: 200),
             const Text(
-              "TẠO TÀI KHOẢN",
+              "CREATE YOUR ACCOUNT",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -81,20 +81,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    _buildInputField(Icons.person, "Họ và tên", _usernameController),
+                    _buildInputField(Icons.person, "Full name", _usernameController),
                     const SizedBox(height: 20),
-                    _buildInputField(Icons.phone, "Số điện thoại", _phoneController),
+                    _buildInputField(Icons.phone, "Phone", _phoneController),
                     const SizedBox(height: 20),
                     _buildInputField(Icons.email, "Email", _emailController),
                     const SizedBox(height: 20),
-                    _buildPasswordField("Mật khẩu", _passwordController),
+                    _buildPasswordField("Password", _passwordController),
                     const SizedBox(height: 20,),
-                    _buildPasswordField("Xác nhận mật khẩu", _rePasswordController),
+                    _buildPasswordField("Confirm password", _rePasswordController),
                     const SizedBox(height: 40,),
                     
                     //button
                     CustomButton(
-                        text: "Đăng ký",
+                        text: "Sign up",
                         textColor: Colors.white, 
                         gradientColors: [Color(0xFFE53935), Color(0xFFFF7043)], 
                         onPressed: (){
@@ -161,7 +161,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Have an account?"),
+        const Text("Already have an account?"),
         TextButton(
           // handle event register
             onPressed: (){
@@ -170,7 +170,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   MaterialPageRoute(builder: (context) => LoginScreen())
               );
             },
-            child: const Text("Login",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),))
+            child: const Text("Log In",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),))
       ],
     );
   }

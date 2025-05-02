@@ -17,14 +17,14 @@ class EmailService{
       } on FirebaseAuthException catch (e) {
         switch (e.code) {
           case 'invalid-email':
-            throw Exception('Email không hợp lệ.');
+            throw Exception('Invalid email address.');
           case 'user-not-found':
-            throw Exception('Không tìm thấy tài khoản với email này.');
+            throw Exception('No account found with this email.');
           case 'too-many-requests':
             throw Exception(
-                'Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau.');
+                'Too many requests. Please try again later.');
           default:
-            throw Exception('Lỗi không xác định: ${e.message}');
+            throw Exception('Unknown error: ${e.message}');
         }
       }
     }
@@ -37,13 +37,13 @@ class EmailService{
      } on FirebaseAuthException catch (e) {
        switch (e.code) {
          case 'invalid-email':
-           throw Exception('Email không hợp lệ.');
+           throw Exception('Invalid email address.');
          case 'user-not-found':
-           throw Exception('Không tìm thấy tài khoản với email này.');
+           throw Exception('No account found with this email.');
          case 'too-many-requests':
-           throw Exception('Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau.');
+           throw Exception('Too many requests. Please try again later.');
          default:
-           throw Exception('Lỗi không xác định: ${e.message}');
+           throw Exception('Unknown error: ${e.message}');
        }
      }
   }

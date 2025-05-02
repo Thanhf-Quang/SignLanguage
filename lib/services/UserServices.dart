@@ -33,18 +33,4 @@ class UserService {
     });
   }
 
-  /// update thông tin user
-  Future<Users?> updateUserInfo({required String name, required String phone}) async {
-    final user = _auth.currentUser;
-    if (user == null) return null;
-
-    ///gọi hàm mã hoá phone
-    // final encryptedPhone = encryptText(phone);
-
-    await _firestore.collection('users').doc(user.uid).update({
-
-    });
-    return setCurrentUser();
-  }
-
 }

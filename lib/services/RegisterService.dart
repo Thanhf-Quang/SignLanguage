@@ -20,7 +20,7 @@ class RegisterService{
           .get();
 
       if (existingUsers.docs.isNotEmpty) {
-        throw Exception('Email này đã được đăng ký trước đó.');
+        throw Exception('This email address already exists.');
       }
 
       final encryptedPhone = encryptText(phone);
@@ -30,9 +30,9 @@ class RegisterService{
         'email': encryptedEmail,
         'phone': encryptedPhone,
         'name': name,
-        'role': 'student',
+        'role': 'Student',
         'birthday': '',
-        'avtURL': '' //sửa avtUrl mặc định ở đây
+        'avtURL': 'https://res.cloudinary.com/dmdcyhkkl/image/upload/v1746109808/oq4jbsjgqytaztschvhw.jpg' //sửa avtUrl mặc định ở đây
       });
     } catch(e){
       throw Exception(e.toString());

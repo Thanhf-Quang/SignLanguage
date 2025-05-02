@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hand_sign/controllers/RegisterController.dart';
 import '../login/login.dart';
-import '../quiz/QuizScreen.dart';
+//import '../quiz/QuizScreen.dart';
 import '../../widgets/custom/CustomAppBar.dart';
 import '../../services/EmailService.dart';
 import '../register/registerScreen.dart';
@@ -36,7 +36,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
     final user = _auth.currentUser;
     if (user == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Không tìm thấy người dùng.')),
+        const SnackBar(content: Text('User not found.')),
       );
       return;
     }
@@ -60,7 +60,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
       );
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Đăng ký thành công!')),
+        const SnackBar(content: Text('Registration successful!')),
       );
 
       Navigator.pushAndRemoveUntil(
@@ -70,7 +70,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Bạn chưa xác thực email!')),
+        const SnackBar(content: Text('Your email address is not verified!')),
       );
     }
   }
@@ -83,7 +83,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
       setState(() => isLoading = false);
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Đã gửi lại email xác thực!')),
+        const SnackBar(content: Text('Verification email resent!')),
       );
     }catch(e){
       ScaffoldMessenger.of(context).showSnackBar(
@@ -109,14 +109,14 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
 @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Xác thực email", showBackButton: false,),
+      appBar: CustomAppBar(title: "Email Verification", showBackButton: false,),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              ' Chúng tôi đã gửi một email xác thực đến:',
+              'We have sent a verification email to:',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const SizedBox(height: 8),
@@ -124,18 +124,18 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
             const SizedBox(height: 24),
             Image.asset("assets/images/email-sending.jfif", height: 361, width: 433,),
             _buildOption(
-                textQuestion: "Không nhận được email?",
-                textAction: "Gửi lại email xác thực",
+                textQuestion: "Didn't receive the email?",
+                textAction: "Resend verification email",
                 onPressed: isLoading ? null : resendEmail,
             ),
             _buildOption(
-              textQuestion: "Bạn đã xác thực?",
-              textAction: "Đã xác thực",
+              textQuestion: "Already verified?",
+              textAction: "Verified",
               onPressed: checkEmailVerified,
             ),
             _buildOption(
-              textQuestion: "Email không đúng?",
-              textAction: "Đăng ký lại",
+              textQuestion: "Incorrect email?",
+              textAction: "Register again",
               onPressed: cancelAndRestart,
             ),
           ],

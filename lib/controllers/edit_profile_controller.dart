@@ -3,8 +3,9 @@ import 'dart:convert';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
-import '../models/User.dart';
+import '../models/Users.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../constants/Encryption.dart';
 
 class EditProfileController {
   final CollectionReference usersCollection =
@@ -17,15 +18,33 @@ class EditProfileController {
   Future<Users?> loadUserProfile() async {
     final doc = await usersCollection.doc(userId).get();
     if (doc.exists) {
-      return Users.fromMap(doc.data() as Map<String, dynamic>);
+      final data = doc.data() as Map<String, dynamic>;
+
+      // Giải mã email và phone nếu bị mã hóa
+      final decryptedEmail = decryptText(data['email']);
+      final decryptedPhone = decryptText(data['phone']);
+
+      return Users.fromMap({
+        'uid': userId,
+        'name': data['name'],
+        'email': decryptedEmail,
+        'phone': decryptedPhone,
+        'role': data['role'],
+        'birthday': data['birthday'],
+        'avtURL': data['avtURL'],
+      });
     }
     return null;
   }
 
-  Future<void> updateUserProfile(String name, String phone) async {
+
+  Future<void> updateUserProfile(String name, String phone, String birthday, String role) async {
+    final encryptedPhone = encryptText(phone);
     await usersCollection.doc(userId).update({
       'name': name,
-      'phone': phone,
+      'phone': encryptedPhone,
+      'birthday': birthday,
+      'role': role,
     });
   }
 

@@ -40,17 +40,17 @@ class LoginService {
   static String _mapFirebaseAuthError(FirebaseAuthException e) {
     switch (e.code) {
       case 'user-not-found':
-        return 'Không tìm thấy tài khoản với email này.';
+        return 'No account found with this email address.';
       case 'wrong-password':
-        return 'Mật khẩu không chính xác.';
+        return 'Incorrect password.';
       case 'invalid-email':
-        return 'Email không hợp lệ.';
+        return 'Invalid email address.';
       case 'user-disabled':
-        return 'Tài khoản này đã bị vô hiệu hóa.';
+        return 'This account has been disabled.';
       case 'invalid-credential':
-        return 'Thông tin đăng nhập không chính xác!';
+        return 'Incorrect login information!';
       default:
-        return 'Lỗi đăng nhập: ${e.message}';
+        return 'Login error: ${e.message}';
     }
   }
 

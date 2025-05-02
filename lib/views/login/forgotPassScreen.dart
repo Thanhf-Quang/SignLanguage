@@ -19,7 +19,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
     final email = _emailController.text.trim();
     if (email.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Vui lòng nhập email')),
+        SnackBar(content: Text('Please enter your email address.')),
       );
       return;
     }
@@ -29,7 +29,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
       _loginController.resetPassword(email, context);
     }else{
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Vui lòng sử dụng email tài khoản của bạn')),
+        SnackBar(content: Text('Please use your email address.')),
       );
       return;
     }
@@ -52,7 +52,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "QUÊN MẬT KHẨU?",
+              "FORGOT PASSWORD?",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -60,16 +60,16 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
               ),
             ),
             Text(
-              "Vui lòng nhập email để nhận liên kết đặt lại mật khẩu.",
+              "Please enter your email address to receive a password reset link.",
               style: TextStyle(
                 color: Colors.grey,
               ),
             ),
             const SizedBox(height: 30,),
-            _buildInputField(Icons.person, "Nhập email"),
+            _buildInputField(Icons.person, "Enter your email"),
             const SizedBox(height: 30,),
             CustomButton(
-                text: "Tiếp theo",
+                text: "Submit",
                 textColor: Colors.white,
                 gradientColors: [Color(0xFFFF1A63), Color(0xFFFF8595)],
                 onPressed: _handleResetPassword,
