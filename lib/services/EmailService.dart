@@ -12,7 +12,21 @@ class EmailService{
    Future<void> sendVerificationEmail() async {
     final user = _auth.currentUser;
     if (user != null && !user.emailVerified) {
-      await user.sendEmailVerification();
+      try {
+        await user.sendEmailVerification();
+      } on FirebaseAuthException catch (e) {
+        switch (e.code) {
+          case 'invalid-email':
+            throw Exception('Email không hợp lệ.');
+          case 'user-not-found':
+            throw Exception('Không tìm thấy tài khoản với email này.');
+          case 'too-many-requests':
+            throw Exception(
+                'Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau.');
+          default:
+            throw Exception('Lỗi không xác định: ${e.message}');
+        }
+      }
     }
   }
 
