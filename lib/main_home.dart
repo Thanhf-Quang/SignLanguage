@@ -4,6 +4,7 @@ import 'package:hand_sign/views/login/login.dart';
 import './home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'views/login/login.dart';
+import 'views/flashcard/flashcard.dart';
 
 
 late List<CameraDescription> cameras;
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hand Gesture Recognition',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: FlashCardScreen(),
     );
   }
 }
