@@ -207,7 +207,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         onPressed: () => setState(() => isEditing = true),
                       ),
                       IconButton(
-                        icon: Icon(Icons.favorite,
+                        icon: Icon(Icons.bookmark,
                             color: !isEditing ? Color(0xFFFF721A) : Colors.grey),
                         onPressed: () => setState(() => isEditing = false),
                       ),
