@@ -30,45 +30,74 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
   @override
   void initState() {
     super.initState();
-    checkEmailVerified();
   }
 
   Future<void> checkEmailVerified() async {
-    await _auth.currentUser?.reload();
+    final user = _auth.currentUser;
+    if (user == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Không tìm thấy người dùng.')),
+      );
+      return;
+    }
+    await user.reload(); // reload trạng thái từ server
+    final refreshedUser = _auth.currentUser; // lấy lại user sau reload
+
     setState(() {
-      isEmailVerified = _auth.currentUser?.emailVerified ?? false;
+      isEmailVerified = refreshedUser?.emailVerified ?? false;
     });
 
+    debugPrint("Email: ${refreshedUser?.email}, Verified: $isEmailVerified"); // debug nếu cần
+
     if (isEmailVerified) {
-      final uid = _auth.currentUser!.uid;
+      final uid = refreshedUser!.uid;
       await RegisterController.saveUserAfterEmailVerified(
-          uid: uid,
-          email: widget.email,
-          name: widget.name,
-          phone: widget.phone,
-          password: widget.password
+        uid: uid,
+        email: widget.email,
+        name: widget.name,
+        phone: widget.phone,
+        password: widget.password,
       );
+
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Đăng ký thành công!')),
       );
-      //chuyển hướng login
-      Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen()));
+
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => LoginScreen()),
+            (route) => false,
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Bạn chưa xác thực email!')),
+      );
     }
   }
 
   Future<void> resendEmail() async {
     setState(() => isLoading = true);
 
-    await _emailService.sendVerificationEmail();
-    setState(() => isLoading = false);
+   try {
+      await _emailService.sendVerificationEmail();
+      setState(() => isLoading = false);
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Đã gửi lại email xác thực!')),
-    );
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Đã gửi lại email xác thực!')),
+      );
+    }catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString().replaceAll("Exception: ", "")))
+      );
+    }
   }
 
   Future<void> cancelAndRestart() async {
-    await _auth.currentUser?.delete();
+    try {
+      await _auth.currentUser?.delete();
+    } catch (e) {
+      debugPrint('Error deleting user: $e');
+    }
     await _auth.signOut();
 
     Navigator.pushReplacement(
@@ -77,10 +106,10 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
     );
   }
 
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Xác thực email"),
+      appBar: CustomAppBar(title: "Xác thực email", showBackButton: false,),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
