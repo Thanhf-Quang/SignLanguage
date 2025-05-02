@@ -11,7 +11,7 @@ class RegisterController{
 
   //check signin field
   static String? checkVailidInfor({required String username,required String phone,required String email,required String password,required String rePass}){
-    final usernameRegex = RegExp(r'^[a-zA-Z0-9]+$');
+    final usernameRegex = RegExp(r'^[a-zA-Z0-9\s]+$');
     final phoneRegex = RegExp(r'^0[0-9]+$');
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     final passwordRegex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{6,}$');
