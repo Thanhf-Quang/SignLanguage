@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hand Gesture Recognition',
       debugShowCheckedModeBanner: false,
-      home: FlashCardScreen(),
+      home: HomeScreen(),
     );
   }
 }
