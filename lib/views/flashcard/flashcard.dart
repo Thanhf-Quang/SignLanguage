@@ -1,10 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../models/FlashCard.dart';
 import './gesture_matching.dart';
 import './reflex.dart';
+import '../../controllers/LevelManager.dart';
+import '../../models/Users.dart';
+import '../../services/UserServices.dart';
 
-class FlashCardScreen extends StatelessWidget {
+
+class FlashCardScreen extends StatefulWidget {
+  @override
+  _FlashCardScreenState createState() => _FlashCardScreenState();
+}
+
+class _FlashCardScreenState extends State<FlashCardScreen> {
   final Color primaryColor = Color(0xFFFF6F00); // Màu cam chính
+  List<bool> levelUnlocked = [true, false, false, false]; // default tạm
+  final currentUser = FirebaseAuth.instance.currentUser;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLevelStatus();
+  }
+
+  void _loadLevelStatus() async {
+    if (currentUser == null) {
+      print("User chưa đăng nhập - không thể load level");
+      return;
+    }
+
+    final levels = await LevelManager.getUnlockedLevels(4);
+    setState(() {
+      levelUnlocked = levels;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,41 +102,57 @@ class FlashCardScreen extends StatelessWidget {
                     ),
                     // Hand Icons
                     // Hand Icons
+                    // Level 1
                     Positioned(
                       top: 0,
-                      child: handCircle(context, () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => GestureMatchingGame())
-                        );
-                      }),
+                      child: handCircle(
+                        context: context,
+                        isUnlocked: levelUnlocked[0],
+                        level: 1,
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => GestureMatchingGame()));
+                        },
+                      ),
                     ),
+// Level 2
                     Positioned(
                       top: 200,
                       left: 50,
-                      child: handCircle(context, () {
-                        //Navigator.pushNamed(context, '/game');
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ReflexScreen())
-                        );
-                      }),
+                      child: handCircle(
+                        context: context,
+                        isUnlocked: levelUnlocked[1],
+                        level: 2,
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => ReflexScreen()));
+                        },
+                      ),
                     ),
+// Level 3
                     Positioned(
                       top: 330,
                       right: 50,
-                      child: handCircle(context, () {
-                        //Navigator.pushNamed(context, '/sing');
-                        debugPrint("đến trang 3");
-                      }),
+                      child: handCircle(
+                        context: context,
+                        isUnlocked: levelUnlocked[2],
+                        level: 3,
+                        onTap: () {
+                          debugPrint("đến trang 3");
+                        },
+                      ),
                     ),
+// Level 4
                     Positioned(
                       bottom: 20,
-                      child: handCircle(context, () {
-                       // Navigator.pushNamed(context, '/story');
-                        debugPrint("đến trang 4");
-                      }),
+                      child: handCircle(
+                        context: context,
+                        isUnlocked: levelUnlocked[3],
+                        level: 4,
+                        onTap: () {
+                          debugPrint("đến trang 4");
+                        },
+                      ),
                     ),
+
                   ],
                 ),
               ),
@@ -131,20 +177,49 @@ class FlashCardScreen extends StatelessWidget {
     );
   }
 
-  Widget handCircle(BuildContext context, VoidCallback onTap) {
+  Widget handCircle({
+    required BuildContext context,
+    required bool isUnlocked,
+    required int level,
+    VoidCallback? onTap,
+  }) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        if (isUnlocked) {
+          onTap?.call();
+        } else {
+          showDialog(
+            context: context,
+            builder: (_) => AlertDialog(
+              title: Text("Warning"),
+              content: Text("You need to pass the previous levels to continue.", style: TextStyle(fontSize: 18,)),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text("OK",style: TextStyle(fontSize: 16,)),
+                )
+              ],
+            ),
+          );
+        }
+      },
       borderRadius: BorderRadius.circular(50),
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: primaryColor,
+          color: isUnlocked ? primaryColor : Colors.grey,
         ),
-        child: Icon(Icons.pan_tool, color: Colors.white, size: 50),
+        child: Column(
+          children: [
+            Icon(Icons.pan_tool, color: Colors.white, size: 40),
+            SizedBox(height: 4),
+          ],
+        ),
       ),
     );
   }
+
 
 
 }

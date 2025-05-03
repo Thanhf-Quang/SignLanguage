@@ -3,6 +3,7 @@ import './flashcard.dart';
 import 'package:flutter/material.dart';
 import '../../controllers/reflex_controller.dart';
 import '../../models/Reflex.dart';
+import '../../controllers/LevelManager.dart';
 
 class ReflexScreen extends StatefulWidget {
   @override
@@ -65,6 +66,7 @@ class _ReflexScreenState extends State<ReflexScreen> {
     if (model.isFinished) {
       setState(() {
         gameFinished = true;
+        LevelManager.unlockLevel(2); // Level 2 -> mở khóa level 3
       });
       return;
     }

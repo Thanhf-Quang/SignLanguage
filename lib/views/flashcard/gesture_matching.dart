@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'flashcard.dart';
 import '../../controllers/gesture_controller.dart';
+import '../../controllers/LevelManager.dart';
 
 class GestureMatchingGame extends StatelessWidget {
   @override
@@ -101,14 +102,20 @@ class GestureGameView extends StatelessWidget {
                             );
                           },
                           onWillAccept: (data) => data == entry.key,
-                          onAccept: (data) {
-                            controller.acceptMatch(entry.key);
-                            if (controller.isGameComplete()) {
-                              Future.delayed(Duration(milliseconds: 300), () {
-                                _showCompletionDialog(context);
-                              });
+                            onAccept: (data) {
+                              controller.acceptMatch(entry.key);
+
+                              if (controller.isGameComplete()) {
+                                // Đảm bảo dialog hiển thị sau khi mở khóa xong level tiếp theo
+                                LevelManager.unlockLevel(1); // mở khóa level 1 sau khi hoàn thành level 0
+
+                                // Chờ một chút rồi mới hiển thị dialog
+                                Future.delayed(Duration(milliseconds: 300), () {
+                                  _showCompletionDialog(context);
+                                });
+                              }
                             }
-                          },
+
                         );
                       }).toList(),
                     ),

@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'views/detection/detection_screen.dart';
 import 'views/profile/edit_profile.dart';
+import 'views/flashcard/flashcard.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,6 +59,21 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                   child: Text('Trang Cá Nhân', style: TextStyle(fontSize: 18)),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FlashCardScreen(),
+                      ),
+                    );
+                  },
+                  child: Text('FlashCards', style: TextStyle(fontSize: 18)),
                 ),
               ]
           )
