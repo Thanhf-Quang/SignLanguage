@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       automaticallyImplyLeading: false,
       leading: showBackButton ? GestureDetector(
-        onTap: onBack ?? () => Navigator.pop(context),
+        onTap: onBack ?? () => Navigator.pop(context, true),
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Image.asset(

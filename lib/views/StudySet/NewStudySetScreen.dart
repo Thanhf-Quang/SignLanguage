@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_language_app/Model/StudyItem.dart';
+import '../../Models/StudyItem.dart';
 import '../../Services/StudySetService.dart';
 import 'StudyItemModal.dart';
 

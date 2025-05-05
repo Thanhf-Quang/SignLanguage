@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_language_app/Model/StudyItem.dart';
-import '../../Controller/StudyItemController.dart';
+import '../../Models/StudyItem.dart';
+import '../../Controllers/StudyItemController.dart';
 
 class StudyItemModal {
   final StudyItemController _itemController = StudyItemController();
@@ -21,7 +21,7 @@ class StudyItemModal {
             Future<void> performSearch(String keyword) async {
               final results = await _itemController.searchItems(keyword);
               setState(() {
-                filteredItems = results;
+                filteredItems = results.cast<StudyItem>();
               });
             }
 

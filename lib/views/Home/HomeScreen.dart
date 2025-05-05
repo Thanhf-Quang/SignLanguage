@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sign_language_app/View/Practice/PracticeScreen.dart';
-import 'package:sign_language_app/View/StudySet/StudySetsScreen.dart'; // Import màn hình cần điều hướng
+import '../Practice/PracticeScreen.dart';
+import '../StudySet/StudySetsScreen.dart'; // Import màn hình cần điều hướng
+import '../profile/edit_profile.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -19,6 +20,12 @@ class HomeScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => PracticeScreen()),
+            );
+          }
+          if (index == 4) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EditProfilePage()),
             );
           }
         },
@@ -92,7 +99,6 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         categoryItem('Camera', 'assets/camera.png', Colors.blue),
-                        categoryItem('Video call', 'assets/video-camera.png', Colors.yellow),
                         categoryItem('Study', 'assets/book.png', Colors.orange),
                         categoryItem('Quiz Test', 'assets/quiz.png', Colors.pink),
                         categoryItem('Other', 'assets/other.png', Colors.purple),

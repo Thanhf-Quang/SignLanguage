@@ -1,5 +1,5 @@
-import '../Model/StudyItem.dart';
-import '../Services/StudyItemService.dart';
+import '../models/StudyItem.dart';
+import '../services/StudyItemService.dart';
 
 class StudyItemController {
   final StudyItemService _service = StudyItemService();

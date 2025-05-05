@@ -98,11 +98,11 @@ class _ReflexScreenState extends State<ReflexScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFDEB),
+      backgroundColor: Color(0xFFFFF8EE),
       appBar: AppBar(
         centerTitle: true,
         title: Text('Reflex Game', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Color(0xFFEFDC9E),
+        backgroundColor: Color(0xFFFBEAB9),
       ),
       body: Center(
         child: SingleChildScrollView(
