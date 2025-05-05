@@ -21,7 +21,7 @@ class DialogHelper {
               Navigator.of(context).pop(); // đóng dialog
               if (onCancel != null) onCancel();
             },
-            child: Text("Không"),
+            child: Text("No"),
           ),
           ElevatedButton(
             onPressed: () {

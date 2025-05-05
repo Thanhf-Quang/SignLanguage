@@ -38,7 +38,7 @@ class EditProfileController {
   }
 
 
-  Future<void> updateUserProfile(String name, String phone, String birthday, String role) async {
+  Future<Users?> updateUserProfile(String name, String phone, String birthday, String role) async {
     final encryptedPhone = encryptText(phone);
     await usersCollection.doc(userId).update({
       'name': name,
@@ -46,6 +46,25 @@ class EditProfileController {
       'birthday': birthday,
       'role': role,
     });
+
+    // Lấy lại bản ghi mới sau khi update
+    final doc = await usersCollection.doc(userId).get();
+    if (doc.exists) {
+      final data = doc.data() as Map<String, dynamic>;
+      final decryptedEmail = decryptText(data['email']);
+      final decryptedPhone = decryptText(data['phone']);
+
+      return Users.fromMap({
+        'uid': userId,
+        'name': data['name'],
+        'email': decryptedEmail,
+        'phone': decryptedPhone,
+        'role': data['role'],
+        'birthday': data['birthday'],
+        'avtURL': data['avtURL'],
+      });
+    }
+    return null;
   }
 
   Future<String?> uploadImageToCloudinary(File imageFile) async {

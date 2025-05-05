@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sign_language_app/Services/StudySetService.dart';
+import '../../Services/StudySetService.dart';
 import '../Home/HomeScreen.dart';
 import 'NewStudySetScreen.dart';
 

@@ -76,7 +76,7 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
                     backgroundColor: primaryColor,
                     child: Icon(Icons.pan_tool, color: Colors.white),
                   ),
-                  title: Text("Continue where you left off"),
+                  title: Text("Learning through games"),
                   subtitle: Text("Master Sign Language with us"),
                   trailing: CircleAvatar(
                     backgroundColor: primaryColor,

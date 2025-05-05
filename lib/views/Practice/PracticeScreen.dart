@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sign_language_app/View/Home/HomeScreen.dart';
+import '../Home/HomeScreen.dart';
+import '../profile/edit_profile.dart';
+import '../flashcard/flashcard.dart';
 
 class PracticeScreen extends StatelessWidget {
   @override
@@ -16,6 +18,12 @@ class PracticeScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => HomeScreen()), // Chuyển sang màn hình Menu
+            );
+          }
+          if (index == 4) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EditProfilePage()),
             );
           }
         },
@@ -54,7 +62,14 @@ class PracticeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FlashCardScreen(),
+                        ),
+                      );
+                    },
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(color: Colors.orange),
                       minimumSize: Size(double.infinity, 50),

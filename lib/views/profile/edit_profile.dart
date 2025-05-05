@@ -104,10 +104,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
     if (currentUser == null) {
       // Giao diện khi chưa đăng nhập
       return Scaffold(
-        backgroundColor: Color(0xFFFFFCF3),
+        backgroundColor: Color(0xFFFFF8EE),
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color(0xFFFFFCF3),
+          backgroundColor: Color(0xFFFFF8EE),
         ),
         body: Center(
           child: Padding(
@@ -166,11 +166,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
         : AssetImage('assets/images/default_avatar.jpg')) as ImageProvider;
 
     return Scaffold(
-      backgroundColor: Color(0xFFFFFCF3),
+      backgroundColor: Color(0xFFFFF8EE),
       appBar: AppBar(
         title: Text('Profile', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
-        backgroundColor: Color(0xFFFFFCF3),
+        backgroundColor: Color(0xFFFFF8EE),
         actions: [
           IconButton(
             icon: Icon(Icons.logout, color: Colors.black),

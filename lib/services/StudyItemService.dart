@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:sign_language_app/Model/StudyItem.dart';
+import '../models/StudyItem.dart';
 
 class StudyItemService {
   final CollectionReference _itemRef = FirebaseFirestore.instance.collection('StudyItem');

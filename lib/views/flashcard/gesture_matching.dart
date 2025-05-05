@@ -44,7 +44,7 @@ class GestureGameView extends StatelessWidget {
     final entryList = controller.gestureToWord.entries.toList()..shuffle();
 
     return Scaffold(
-      backgroundColor: Color(0xFFFFFCF3),
+      backgroundColor: Color(0xFFFFF8EE),
       appBar: AppBar(
         centerTitle: true,
         title: Text('Gesture Matching Game', style: TextStyle(fontWeight: FontWeight.bold)),
