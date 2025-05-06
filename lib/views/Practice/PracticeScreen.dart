@@ -14,7 +14,7 @@ class PracticeScreen extends StatelessWidget {
         showUnselectedLabels: true,
         currentIndex: 1, // Đặt mặc định ở "Practice"
         onTap: (index) {
-          if (index == 2) { // Khi nhấn vào "Menu"
+          if (index == 0 || index == 2) { // Khi nhấn vào "Menu"
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => HomeScreen()), // Chuyển sang màn hình Menu

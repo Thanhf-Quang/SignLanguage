@@ -173,31 +173,33 @@ class _EditProfilePageState extends State<EditProfilePage> {
         backgroundColor: Color(0xFFFFF8EE),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout, color: Colors.black),
+            icon: Icon(Icons.logout, color: Color(0xFFFF721A)),
             onPressed: () {
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
                     backgroundColor: Color(0xFFFFF8EE),
-                    title: Text("Are you sure you want to log out?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+                    title: const Text('Log Out',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),),
+                    content: const Text('Are you sure you want to log out?',textAlign: TextAlign.center),
                     actions: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             TextButton(
-                              child: Text("No, stay logged in", style: TextStyle(color: Colors.redAccent)),
+                              child: Text("No, stay logged in", style: TextStyle(color: Color(0xFF4E3715))),
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
                             ),
-                            TextButton(
-                              child: Text("Yes, log out", style: TextStyle(color: Colors.redAccent)),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Color(0xFF4E3715),
+                              ),
+                              child: Text("Yes, log out", style: TextStyle(color: Colors.white)),
                               onPressed: () async {
                                 Navigator.of(context).pop();
                                 await FirebaseAuth.instance.signOut();
