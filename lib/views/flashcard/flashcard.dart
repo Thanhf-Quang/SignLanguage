@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../Home/HomeScreen.dart';
 import '../../models/FlashCard.dart';
 import './gesture_matching.dart';
 import './reflex.dart';
 import '../../controllers/LevelManager.dart';
-import '../../models/Users.dart';
-import '../../services/UserServices.dart';
+import '../profile/edit_profile.dart';
 
 
 class FlashCardScreen extends StatefulWidget {
@@ -163,17 +163,43 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
 
       // Bottom Navigation
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: primaryColor,
+        selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.pan_tool), label: "Practice"),
-          BottomNavigationBarItem(icon: Icon(Icons.grid_view), label: "Menu"),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: "Study"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        showUnselectedLabels: true,
+        currentIndex: 1, // Index tương ứng với màn FlashCard (Practice)
+        onTap: (index) {
+          if (index == 0 || index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );// hoặc dùng MaterialPageRoute nếu chưa định tuyến
+          }
+          if (index == 1) {
+            // Đã ở trang hiện tại
+          }
+          if (index == 4) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EditProfilePage()),
+            );
+          }
+        },
+        items: [
+          buildNavItem('assets/icons/home.png', 'Home'),
+          buildNavItem('assets/icons/point.png', 'Practice'),
+          buildNavItem('assets/icons/open-menu.png', 'Menu'),
+          buildNavItem('assets/icons/book.png', 'Study'),
+          buildNavItem('assets/icons/user.png', 'Profile'),
         ],
       ),
+
+    );
+  }
+
+  BottomNavigationBarItem buildNavItem(String imagePath, String label) {
+    return BottomNavigationBarItem(
+      icon: Image.asset(imagePath, width: 24, height: 24),
+      label: label,
     );
   }
 
@@ -191,12 +217,15 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
           showDialog(
             context: context,
             builder: (_) => AlertDialog(
-              title: Text("Warning"),
-              content: Text("You need to pass the previous levels to continue.", style: TextStyle(fontSize: 18,)),
+              backgroundColor: Color(0xFFFFF8EE),
+              title: Text("Warning",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              content: Text("You need to pass the previous levels to continue.", style: TextStyle(fontSize: 16)),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text("OK",style: TextStyle(fontSize: 16,)),
+                  child: Text("OK",style: TextStyle(fontSize: 16, color: Colors.redAccent)),
                 )
               ],
             ),

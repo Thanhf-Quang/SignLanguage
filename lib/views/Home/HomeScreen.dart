@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../flashcard/flashcard.dart';
 import '../Practice/PracticeScreen.dart';
 import '../StudySet/StudySetsScreen.dart'; // Import màn hình cần điều hướng
 import '../profile/edit_profile.dart';
+import '../detection/detection_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -30,11 +32,11 @@ class HomeScreen extends StatelessWidget {
           }
         },
         items: [
-          buildNavItem('assets/home.png', 'Home'),
-          buildNavItem('assets/point.png', 'Practice'),
-          buildNavItem('assets/open-menu.png', 'Menu'),
-          buildNavItem('assets/book.png', 'Study'),
-          buildNavItem('assets/user.png', 'Profile'),
+          buildNavItem('assets/icons/home.png', 'Home'),
+          buildNavItem('assets/icons/point.png', 'Practice'),
+          buildNavItem('assets/icons/open-menu.png', 'Menu'),
+          buildNavItem('assets/icons/book.png', 'Study'),
+          buildNavItem('assets/icons/user.png', 'Profile'),
         ],
       ),
       body: SingleChildScrollView(
@@ -48,10 +50,10 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset('assets/logo.png', width: 40),
+                    Image.asset('assets/icons/logo.png', width: 40),
                     SizedBox(width: 8),
                     Text(
-                      'App name',
+                      'HandSpeak',
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
                     ),
                   ],
@@ -80,7 +82,7 @@ class HomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                  image: AssetImage('assets/news_1.jpg'),
+                  image: AssetImage('assets/icons/news_1.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -98,10 +100,27 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        categoryItem('Camera', 'assets/camera.png', Colors.blue),
-                        categoryItem('Study', 'assets/book.png', Colors.orange),
-                        categoryItem('Quiz Test', 'assets/quiz.png', Colors.pink),
-                        categoryItem('Other', 'assets/other.png', Colors.purple),
+                        categoryItem('Camera', 'assets/icons/camera.png', Colors.blue, () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DetectionScreen()),
+                          );
+                        }),
+                        categoryItem('Games', 'assets/icons/games.png', Colors.purple, () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => FlashCardScreen()),
+                          );
+                        }),
+                        categoryItem('Study', 'assets/icons/book.png', Colors.orange, () {
+                          // TODO: Gọi StudyScreen
+                        }),
+                        categoryItem('Quiz Test', 'assets/icons/quiz.png', Colors.pink, () {
+                          // TODO: Gọi QuizScreen
+                        }),
+                        categoryItem('Other', 'assets/icons/other.png', Colors.yellow, () {
+                          // TODO: Gọi OtherScreen
+                        }),
                       ],
                     ),
                   ),
@@ -119,6 +138,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
 
+
             SizedBox(height: 10),
             Text('Tasks', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             SizedBox(height: 5),
@@ -128,16 +148,16 @@ class HomeScreen extends StatelessWidget {
               spacing: 10,
               runSpacing: 10,
               children: [
-                taskItem('Tạo bộ bài học', 'assets/book.png', 180, () {
+                taskItem('Create Study Set', 'assets/icons/book.png', 180, () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => StudySetsPage()),
                   );
                 }),
-                taskItem('Kiểm tra theo chủ đề', 'assets/check.png', 180, () {}),
-                taskItem('Quiz Test', 'assets/quiz.png', 180, () {}),
-                taskItem('Ghi chú', 'assets/note.png', 180, () {}),
-                taskItem('Luyện tập theo chủ đề', 'assets/trending.png', 370, () {}),
+                taskItem('Topic Test', 'assets/icons/check.png', 180, () {}),
+                taskItem('Quiz Test', 'assets/icons/quiz.png', 180, () {}),
+                taskItem('My Notes', 'assets/icons/note.png', 180, () {}),
+                taskItem('Practice by Topic', 'assets/icons/trending.png', 370, () {}),
               ],
             ),
           ],
@@ -146,22 +166,25 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget categoryItem(String title, String iconPath, Color bgColor) {
+  Widget categoryItem(String title, String iconPath, Color bgColor, VoidCallback onTap) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: bgColor.withOpacity(0.2),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: bgColor.withOpacity(0.2),
+              ),
+              child: Image.asset(iconPath, width: 40),
             ),
-            child: Image.asset(iconPath, width: 40),
-          ),
-          SizedBox(height: 5),
-          Text(title, style: TextStyle(fontSize: 12)),
-        ],
+            SizedBox(height: 5),
+            Text(title, style: TextStyle(fontSize: 12)),
+          ],
+        ),
       ),
     );
   }
