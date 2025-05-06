@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/flashcard/memory.dart';
 import '../Home/HomeScreen.dart';
 import '../../models/FlashCard.dart';
 import './gesture_matching.dart';
@@ -110,7 +111,7 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
                         isUnlocked: levelUnlocked[0],
                         level: 1,
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => GestureMatchingGame()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => ReflexScreen()));
                         },
                       ),
                     ),
@@ -123,7 +124,7 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
                         isUnlocked: levelUnlocked[1],
                         level: 2,
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => ReflexScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => GestureMatchingGame()));
                         },
                       ),
                     ),
@@ -136,7 +137,7 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
                         isUnlocked: levelUnlocked[2],
                         level: 3,
                         onTap: () {
-                          debugPrint("đến trang 3");
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => MemoryGame()));
                         },
                       ),
                     ),
@@ -220,12 +221,12 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
               backgroundColor: Color(0xFFFFF8EE),
               title: Text("Warning",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              content: Text("You need to pass the previous levels to continue.", style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              content: Text("You need to pass the previous levels to continue."),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text("OK",style: TextStyle(fontSize: 16, color: Colors.redAccent)),
+                  child: Text("OK",style: TextStyle(fontSize: 16, color: Color(0xFF4E3715))),
                 )
               ],
             ),

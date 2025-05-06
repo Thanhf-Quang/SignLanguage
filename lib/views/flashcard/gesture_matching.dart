@@ -20,8 +20,9 @@ class GestureGameView extends StatelessWidget {
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: Text('🎉 Congratulation!'),
-        content: Text('You have completed the game.'),
+        backgroundColor: Color(0xFFFFF8EE),
+        title: Text('🎉 Congratulation!', style: TextStyle(fontWeight: FontWeight.bold),),
+        content: Text('You have completed the game.',textAlign: TextAlign.center,),
         actions: [
           TextButton(
             onPressed: () {
@@ -30,7 +31,7 @@ class GestureGameView extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => FlashCardScreen()),
               );
             },
-            child: Text('Continue'),
+            child: Text('Continue', style: TextStyle(color: Color(0xFF4E3715)),),
           ),
         ],
       ),
