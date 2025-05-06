@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../Services/StudySetService.dart';
+import '../../services/StudySetService.dart';
 import '../Home/HomeScreen.dart';
 import 'NewStudySetScreen.dart';
+import 'StudySetDetailScreen.dart';
 
 class StudySetsPage extends StatefulWidget {
   @override
@@ -174,46 +175,57 @@ class _StudySetsPageState extends State<StudySetsPage> {
   }
 
   Widget _buildStudyCard(Map<String, dynamic> set) {
-    return Container(
-      padding: EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade100,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 4),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset("assets/icons/logo.png", height: 40),
-          SizedBox(height: 8),
-          Text("Name", style: TextStyle(fontWeight: FontWeight.bold)),
-          Text(set["title"] ?? ''),
-          SizedBox(height: 8),
-          Row(
-            children: [
-              Icon(Icons.person, size: 16, color: Colors.grey),
-              SizedBox(width: 4),
-              Text("Theo ${set["createBy"] ?? '---'}", style: TextStyle(fontSize: 12)),
-            ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => StudySetDetailScreen(studySetId: set['docId']),
           ),
-          Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(Icons.favorite_border, color: Colors.red, size: 16),
-                  SizedBox(width: 4),
-                  Text("12 likes", style: TextStyle(fontSize: 12)),
-                ],
-              ),
-              Icon(Icons.bookmark, color: Colors.purple, size: 16),
-            ],
-          )
-        ],
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(color: Colors.black12, blurRadius: 4),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset("assets/icons/logo.png", height: 40),
+            SizedBox(height: 8),
+            Text("Name", style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(set["title"] ?? ''),
+            SizedBox(height: 8),
+            Row(
+              children: [
+                Icon(Icons.person, size: 16, color: Colors.grey),
+                SizedBox(width: 4),
+                Text("Theo ${set["createBy"] ?? '---'}", style: TextStyle(fontSize: 12)),
+              ],
+            ),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.favorite_border, color: Colors.red, size: 16),
+                    SizedBox(width: 4),
+                    Text("12 likes", style: TextStyle(fontSize: 12)),
+                  ],
+                ),
+                Icon(Icons.bookmark, color: Colors.purple, size: 16),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
+
 }

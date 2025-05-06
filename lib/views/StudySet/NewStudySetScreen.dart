@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../Models/StudyItem.dart';
-import '../../Services/StudySetService.dart';
+import '../../models/StudyItem.dart';
+import '../../services/StudySetService.dart';
 import 'StudyItemModal.dart';
 
 class StudySetScreen extends StatefulWidget {

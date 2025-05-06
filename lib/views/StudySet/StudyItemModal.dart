@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../Models/StudyItem.dart';
-import '../../Controllers/StudyItemController.dart';
+import '../../models/StudyItem.dart';
+import '../../controllers/StudyItemController.dart';
 
 class StudyItemModal {
   final StudyItemController _itemController = StudyItemController();
