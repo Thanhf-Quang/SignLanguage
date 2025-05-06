@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../services/EmailService.dart';
 import '../../services/LoginServices.dart';
 import '../../views/login/login.dart';
-import '../home.dart';
+import '../views/Home/HomeScreen.dart';
 
 
 

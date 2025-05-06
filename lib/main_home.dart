@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:hand_sign/views/login/login.dart';
+// import 'Home.dart';
 import 'views/Home/HomeScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'views/login/login.dart';

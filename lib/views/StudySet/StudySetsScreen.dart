@@ -186,7 +186,7 @@ class _StudySetsPageState extends State<StudySetsPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset("assets/logo.png", height: 40),
+          Image.asset("assets/icons/logo.png", height: 40),
           SizedBox(height: 8),
           Text("Name", style: TextStyle(fontWeight: FontWeight.bold)),
           Text(set["title"] ?? ''),

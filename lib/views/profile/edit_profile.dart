@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import '../login/login.dart';
 import '../register/registerScreen.dart';
 import '../../controllers/LoginController.dart';
-import '../../home.dart';
+import '../Home/HomeScreen.dart';
 
 
 class EditProfilePage extends StatefulWidget {
@@ -174,15 +174,50 @@ class _EditProfilePageState extends State<EditProfilePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.logout, color: Colors.black),
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => HomeScreen()),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    backgroundColor: Color(0xFFFFF8EE),
+                    title: Text("Are you sure you want to log out?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+                    actions: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            TextButton(
+                              child: Text("No, stay logged in", style: TextStyle(color: Colors.redAccent)),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            TextButton(
+                              child: Text("Yes, log out", style: TextStyle(color: Colors.redAccent)),
+                              onPressed: () async {
+                                Navigator.of(context).pop();
+                                await FirebaseAuth.instance.signOut();
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                },
               );
             },
           ),
         ],
+
       ),
       body: Column(
         children: [
