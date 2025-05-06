@@ -23,4 +23,21 @@ class StudyItemService {
       return StudyItem.fromMap(doc.data() as Map<String, dynamic>);
     }).toList();
   }
+
+  // ⚡ Lấy danh sách item theo danh sách ID
+  Future<List<StudyItem>> getItemsByIds(List<String> ids) async {
+    if (ids.isEmpty) return [];
+
+    final List<StudyItem> result = [];
+
+    for (int i = 0; i < ids.length; i += 10) {
+      final chunk = ids.sublist(i, i + 10 > ids.length ? ids.length : i + 10);
+      final snapshot = await _itemRef.where('itemID', whereIn: chunk).get();
+
+      result.addAll(snapshot.docs.map((doc) =>
+          StudyItem.fromMap(doc.data() as Map<String, dynamic>)));
+    }
+
+    return result;
+  }
 }
