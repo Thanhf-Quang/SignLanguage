@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import '../notes/notes.dart';
 import '../flashcard/flashcard.dart';
 import '../Practice/PracticeScreen.dart';
 import '../StudySet/StudySetsScreen.dart'; // Import màn hình cần điều hướng
 import '../profile/edit_profile.dart';
 import '../detection/detection_screen.dart';
+import 'package:camera/camera.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -100,7 +102,10 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        categoryItem('Camera', 'assets/icons/camera.png', Colors.blue, () {
+                        categoryItem('Camera', 'assets/icons/camera.png', Colors.blue, () async {
+                          WidgetsFlutterBinding.ensureInitialized();
+                          cameras = await availableCameras();
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => DetectionScreen()),
@@ -156,7 +161,12 @@ class HomeScreen extends StatelessWidget {
                 }),
                 taskItem('Topic Test', 'assets/icons/check.png', 180, () {}),
                 taskItem('Quiz Test', 'assets/icons/quiz.png', 180, () {}),
-                taskItem('My Notes', 'assets/icons/note.png', 180, () {}),
+                taskItem('My Notes', 'assets/icons/note.png', 180, () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NotesScreen()),
+                  );
+                }),
                 taskItem('Practice by Topic', 'assets/icons/trending.png', 370, () {}),
               ],
             ),
