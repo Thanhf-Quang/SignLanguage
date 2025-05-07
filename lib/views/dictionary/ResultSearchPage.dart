@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../widgets/custom/CustomAppBar.dart';
 import 'package:video_player/video_player.dart';
+import '../quiz/VideoPlayerWidget.dart';
+
 
 class ResultSearchPage extends StatefulWidget {
   final String keyWord;
@@ -21,6 +23,10 @@ class ResultSearchPage extends StatefulWidget {
 class _ResultSearchPageState extends State<ResultSearchPage> {
   late VideoPlayerController _controller;
 
+  bool get isVideo =>
+      widget.videoUrl.toLowerCase().endsWith('.mp4') ||
+          widget.videoUrl.toLowerCase().contains('video');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +41,9 @@ class _ResultSearchPageState extends State<ResultSearchPage> {
               SizedBox(
                 width: double.infinity,
                 height: 380,
-                child: Image.network(
+                child: isVideo
+                    ? VideoPlayerWidget(videoUrl: widget.videoUrl)
+                    : Image.network(
                   widget.videoUrl,
                   fit: BoxFit.cover,  // Đảm bảo ảnh đầy đủ
                   height: 250,  // Tăng kích thước ảnh

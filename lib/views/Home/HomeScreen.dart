@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/quiz/QuizScreen.dart';
 import '../notes/notes.dart';
 import '../flashcard/flashcard.dart';
 import '../Practice/PracticeScreen.dart';
@@ -121,7 +122,10 @@ class HomeScreen extends StatelessWidget {
                           // TODO: Gọi StudyScreen
                         }),
                         categoryItem('Quiz Test', 'assets/icons/quiz.png', Colors.pink, () {
-                          // TODO: Gọi QuizScreen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => QuizScreen()),
+                          );
                         }),
                         categoryItem('Other', 'assets/icons/other.png', Colors.yellow, () {
                           // TODO: Gọi OtherScreen

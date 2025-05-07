@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 Future<double> uploadVideoForAnalysis(File videoFile, String gifUrl) async {
-  final uri = Uri.parse('http://192.168.100.154:5000/analyze');
+  final uri = Uri.parse('http://192.168.100.151:5000/analyze');
   var request = http.MultipartRequest('POST', uri);
 
   request.fields['gif_url'] = gifUrl;

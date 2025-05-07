@@ -51,6 +51,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
         birthdayController.text = user.birthday ?? '';
         selectedRole = user.role ?? 'Student';
         email = user.email;
+        print("Thông tin ban đầu:");
+        print("Name: ${user.username}");
+        print("Email: ${user.email}");
+        print("Phone: ${user.phone}");
+        print("Birthday: ${user.birthday}");
+        print("Role: ${user.role}");
       });
     }
   }
@@ -99,7 +105,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    final currentUser = FirebaseAuth.instance.currentUser;
+    final currentUser = Users.currentUser;
 
     if (currentUser == null) {
       // Giao diện khi chưa đăng nhập
@@ -175,6 +181,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           IconButton(
             icon: Icon(Icons.logout, color: Color(0xFFFF721A)),
             onPressed: () {
+              Users.currentUser = null;
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
@@ -266,12 +273,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
               buildGradientButton(
                 text: 'Save Changes',
                 onPressed: () async {
-                  await controller.updateUserProfile(
+                  final updatedUser = await controller.updateUserProfile(
                     nameController.text,
                     phoneController.text,
                     birthdayController.text,
                     selectedRole ?? 'Student',
                   );
+                  if (updatedUser != null) {
+                    Users.currentUser = updatedUser;
+                  }
+                  debugPrint("User id: ${Users.currentUser!.id}");
+                  debugPrint("User role: ${Users.currentUser!.role}");
+                  debugPrint("User id: ${Users.currentUser!.phone}");
+                  debugPrint("User id: ${Users.currentUser!.birthday}");
                   await _loadUser();
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Successfully updated profile!')),
