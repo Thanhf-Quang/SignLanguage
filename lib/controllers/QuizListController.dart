@@ -21,7 +21,7 @@ class QuizListController extends ChangeNotifier{
   bool get isLoading => _isLoading;
   String? get selectedType => _selectedType;
 
-  bool get isTeacher => Users.currentUser?.role == 'teacher';
+  bool get isTeacher => Users.currentUser?.role == 'Teacher';
 
   List<Quiz> get filteredQuizzes {
     if (_selectedType == null || _selectedType == 'All') {
