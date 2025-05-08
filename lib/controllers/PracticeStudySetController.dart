@@ -6,7 +6,7 @@ import '../services/StudyItemService.dart';
 class PracticeController {
   final StudyItemService _itemService = StudyItemService();
 
-  /// Lấy danh sách StudyItem từ danh sách ID (dùng cho PracticeScreen)
+  /// Lấy danh sách StudyItem từ danh sách ID (dùng cho PracticeStudySetScreen)
   Future<List<StudyItem>> loadItems(List<String> itemIds) async {
     try {
       return await _itemService.getItemsByIds(itemIds);
