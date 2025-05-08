@@ -43,7 +43,7 @@ class DictionaryScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 if(controller.results.isEmpty)
-                   const Text("Không có từ nào trùng khớp."),
+                   const Text("Do not have any results"),
                 if(controller.results.isNotEmpty)
                   ...controller.results.map((item) => _buildWordItem(
                   context,

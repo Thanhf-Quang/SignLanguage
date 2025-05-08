@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/StudySet/StudySetsScreen.dart';
+import 'package:hand_sign/views/menu/menu.dart';
+import 'package:hand_sign/views/quiz/QuizScreen.dart';
 import '../../controllers/PracticeController.dart';
 import '../../models/PracticeTopic.dart';
 import '../Home/HomeScreen.dart';
@@ -40,10 +43,22 @@ class _PracticeScreenState extends State<PracticeScreen> {
         showUnselectedLabels: true,
         currentIndex: 1,
         onTap: (index) {
-          if (index == 2) {
+          if (index == 0) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+          }
+          if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MenuScreen()),
+            );
+          }
+          if (index == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StudySetsPage()),
             );
           }
           if (index == 4) {
@@ -57,7 +72,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           buildNavItem('assets/icons/home.png', 'Home'),
           buildNavItem('assets/icons/point.png', 'Practice'),
           buildNavItem('assets/icons/open-menu.png', 'Menu'),
-          buildNavItem('assets/icons/book.png', 'Study'),
+          buildNavItem('assets/icons/book.png', 'Studyset'),
           buildNavItem('assets/icons/user.png', 'Profile'),
         ],
       ),
@@ -74,7 +89,18 @@ class _PracticeScreenState extends State<PracticeScreen> {
               child: Column(
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => QuizScreen(
+                            onBack: () {
+                              Navigator.pop(context); // quay lại Practice
+                            },
+                          ),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFFFF721A),
                       minimumSize: Size(double.infinity, 50),
@@ -99,7 +125,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               ),
             ),
             SizedBox(height: 20),
-            Text('Select category to practice', style: TextStyle(fontSize: 16, color: Color(0xFF5D5D5D))),
+            Text('Select category to study', style: TextStyle(fontSize: 16, color: Color(0xFF5D5D5D))),
             SizedBox(height: 10),
             _loading
                 ? Center(child: CircularProgressIndicator())

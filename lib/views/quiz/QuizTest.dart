@@ -95,11 +95,11 @@ class _QuizTestState extends State<QuizTest> {
     return await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Thoát khỏi bài quiz?'),
-        content: Text('Nếu bạn thoát, tiến độ làm bài sẽ không được lưu lại.'),
+        title: Text('Exit?'),
+        content: Text('If you exit, your progress will not be saved.'),
         actions: [
-          TextButton(onPressed: () => Navigator.of(context).pop(false), child: Text('Ở lại')),
-          TextButton(onPressed: () => Navigator.of(context).pop(true), child: Text('Thoát')),
+          TextButton(onPressed: () => Navigator.of(context).pop(false), child: Text('Stay')),
+          TextButton(onPressed: () => Navigator.of(context).pop(true), child: Text('Exit')),
         ],
       ),
     ) ??

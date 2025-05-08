@@ -41,7 +41,7 @@ class StudyItemModal {
                       icon: Icon(Icons.arrow_back, color: Colors.orange),
                       onPressed: () => Navigator.pop(context),
                     ),
-                    title: Text("Tìm và thêm mục", style: TextStyle(color: Colors.black)),
+                    title: Text("Find and add items", style: TextStyle(color: Colors.black)),
                     centerTitle: true,
                   ),
                   Padding(
@@ -52,7 +52,7 @@ class StudyItemModal {
                         performSearch(value.trim());
                       },
                       decoration: InputDecoration(
-                        hintText: "Nhập từ khoá...",
+                        hintText: "Enter keyword...",
                         prefixIcon: Icon(Icons.search),
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                       ),
@@ -60,7 +60,7 @@ class StudyItemModal {
                   ),
                   Expanded(
                     child: filteredItems.isEmpty
-                        ? Center(child: Text("Không tìm thấy kết quả"))
+                        ? Center(child: Text("No items found"))
                         : ListView.builder(
                       itemCount: filteredItems.length,
                       itemBuilder: (context, index) {

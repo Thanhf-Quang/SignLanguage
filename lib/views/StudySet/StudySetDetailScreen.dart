@@ -80,10 +80,10 @@ class _StudySetDetailScreenState extends State<StudySetDetailScreen> {
               _studySet!.title,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Text(
-              'Follow ${_studySet!.createBy}',
-              style: TextStyle(fontSize: 14, color: Colors.grey[700]),
-            ),
+            // Text(
+            //   'By ${_studySet!.createBy}',
+            //   style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+            // ),
             const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

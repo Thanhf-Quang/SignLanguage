@@ -181,7 +181,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
           IconButton(
             icon: Icon(Icons.logout, color: Color(0xFFFF721A)),
             onPressed: () {
-
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
@@ -243,21 +242,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   Text(_user?.role ?? '', style: TextStyle(fontSize: 15)),
 
                   //Phần chỉnh sửa và yêu thích
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.edit,
-                            color: isEditing ? Color(0xFFFF721A) : Colors.grey),
-                        onPressed: () => setState(() => isEditing = true),
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.bookmark,
-                            color: !isEditing ? Color(0xFFFF721A) : Colors.grey),
-                        onPressed: () => setState(() => isEditing = false),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     IconButton(
+                  //       icon: Icon(Icons.edit,
+                  //           color: isEditing ? Color(0xFFFF721A) : Colors.grey),
+                  //       onPressed: () => setState(() => isEditing = true),
+                  //     ),
+                  //     IconButton(
+                  //       icon: Icon(Icons.bookmark,
+                  //           color: !isEditing ? Color(0xFFFF721A) : Colors.grey),
+                  //       onPressed: () => setState(() => isEditing = false),
+                  //     ),
+                  //   ],
+                  // ),
                   SizedBox(height: 20),
                   AnimatedSwitcher(
                     duration: Duration(milliseconds: 100),

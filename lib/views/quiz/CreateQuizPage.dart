@@ -82,7 +82,7 @@ class _CreateQuizPageState extends State<CreateQuizPage> {
       isLoading = false;
     });
 
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Lưu quiz thành công")));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Saved quiz successfully!")));
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(builder: (context) => QuizScreen()),
           (Route<dynamic> route) => false,

@@ -36,13 +36,13 @@ class QuizController extends ChangeNotifier{
 
   ///kiểm tra câu hỏi hiện tại trc khi nhấn next
   String isCurrentQuestionValid(int index) {
-    if (index < 0 || index >= questions.length) return 'Câu hỏi không hợp lệ';
+    if (index < 0 || index >= questions.length) return 'Invalid question';
 
     final q = questions[index];
-    if (q.questionText.trim().isEmpty) return 'Vui lòng nhập nội dung câu hỏi';
-    if (q.options.any((o) => o.trim().isEmpty)) return 'Vui lòng nhập đầy đủ các đáp án';
-    if (q.selectedMediaFile == null) return 'Vui lòng chọn ảnh/video minh hoạ';
-    if (q.correctAnswerIndex < 0 || q.correctAnswerIndex >= 4) return 'Vui lòng chọn đáp án đúng';
+    if (q.questionText.trim().isEmpty) return 'Please enter question text';
+    if (q.options.any((o) => o.trim().isEmpty)) return 'Please enter all options';
+    if (q.selectedMediaFile == null) return 'Please select media file';
+    if (q.correctAnswerIndex < 0 || q.correctAnswerIndex >= 4) return 'Please select correct answer';
 
     return '';
   }
@@ -58,7 +58,7 @@ class QuizController extends ChangeNotifier{
     List<Question> finalQuestions = [];
     final user = FirebaseAuth.instance.currentUser;
 
-    if (user == null) return 'Bạn cần phải đăng nhập!';
+    if (user == null) return 'You must be logged in to create a quiz!';
 
     for(var q in questions){
       String mediaUrl = '';
@@ -69,7 +69,7 @@ class QuizController extends ChangeNotifier{
           q.selectedMediaFile!,
           q.selectedMediaName!,
         );
-        if (uploadedUrl == null) return "Lỗi khi upload media.";
+        if (uploadedUrl == null) return "Error uploading media file";
         mediaUrl = uploadedUrl;
       }
 

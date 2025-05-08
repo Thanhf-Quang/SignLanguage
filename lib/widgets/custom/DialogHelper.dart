@@ -13,6 +13,7 @@ class DialogHelper {
       context: context,
       barrierDismissible: false, // k cho phép bấm ra ngoài để đóng
       builder: (context) => AlertDialog(
+        backgroundColor: Color(0xFFFFF3EB),
         title: Text(title),
         content: Text(message),
         actions: [
@@ -21,14 +22,18 @@ class DialogHelper {
               Navigator.of(context).pop(); // đóng dialog
               if (onCancel != null) onCancel();
             },
-            child: Text("No"),
+            child: Text(
+              "No",
+              style: TextStyle(color: Colors.black),
+            ),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).pop(); // đóng dialog
               onConfirm();
             },
-            child: Text(confirmText),
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFFFE0CA)),
+            child: Text(confirmText,style: TextStyle(color: Colors.black),),
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/StudyItem.dart';
+import '../../models/Users.dart';
 import '../../services/StudySetService.dart';
 import 'StudyItemModal.dart';
 
@@ -31,7 +32,7 @@ class StudySetScreenState extends State<StudySetScreen> {
 
     if (title.isEmpty || category.isEmpty || items.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Vui lòng nhập đầy đủ thông tin")),
+        SnackBar(content: Text("Enter all fields and add items.")),
       );
       return;
     }
@@ -42,11 +43,12 @@ class StudySetScreenState extends State<StudySetScreen> {
         category: category,
         studyItemIds: items.map((e) => e.id).toList(),
         isPublic: isPublic,
+        userId: Users.currentUser!.id,
       );
       print('onclick Hoan tất');
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Lưu thành công!")),
+        SnackBar(content: Text("Saved study set successfully!")),
       );
 
       await Future.delayed(Duration(milliseconds: 1500));
@@ -55,7 +57,7 @@ class StudySetScreenState extends State<StudySetScreen> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Lỗi khi lưu: $e")),
+        SnackBar(content: Text("Error saving study set: $e")),
       );
     }
   }
@@ -72,14 +74,14 @@ class StudySetScreenState extends State<StudySetScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Tạo bộ bài học",
+          "Create study sets",
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         centerTitle: true,
         actions: [
           TextButton(
             onPressed: handleSaveStudySet,
-            child: Text("Hoàn tất", style: TextStyle(color: Colors.blue, fontSize: 16)),
+            child: Text("Finish", style: TextStyle(color: Colors.blue, fontSize: 16)),
           )
         ],
       ),
@@ -88,11 +90,11 @@ class StudySetScreenState extends State<StudySetScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildTextField("Tên bộ bài học", titleController),
-            buildTextField("Danh mục", categoryController),
+            buildTextField("Name of study set", titleController),
+            buildTextField("Category", categoryController),
             buildPrivacySwitch(),
             SizedBox(height: 10),
-            Text("Mục", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text("Items", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             SizedBox(height: 5),
             Expanded(
               child: Container(
@@ -122,7 +124,7 @@ class StudySetScreenState extends State<StudySetScreen> {
                 ),
               ),
               child: Center(
-                child: Text("Thêm mục", style: TextStyle(fontSize: 16, color: Colors.white)),
+                child: Text("Add study items", style: TextStyle(fontSize: 16, color: Colors.white)),
               ),
             ),
           ],
@@ -159,7 +161,7 @@ class StudySetScreenState extends State<StudySetScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("Công khai Bộ bài học của tôi", style: TextStyle(fontSize: 16)),
+          Text("Public my study set", style: TextStyle(fontSize: 16)),
           Switch(
             value: isPublic,
             onChanged: (value) {

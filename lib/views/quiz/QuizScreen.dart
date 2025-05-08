@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/Home/HomeScreen.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/QuizListController.dart';
@@ -13,6 +14,10 @@ import './QuizTest.dart';
 import '../../controllers/QuizResultController.dart';
 
 class QuizScreen extends StatelessWidget {
+  final VoidCallback? onBack;
+
+  QuizScreen({this.onBack});
+
   final List<Color> colorsOption = const [
     Color(0xFFDDF9FF),
     Color(0xFFFF7996),
@@ -27,7 +32,15 @@ class QuizScreen extends StatelessWidget {
       create: (_) => QuizListController()..loadData(),
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: CustomAppBar(title: "List quiz"),
+        appBar: CustomAppBar(title: "List quiz",
+          onBack: onBack ??
+                  () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => HomeScreen()),
+                );
+              },
+        ),
         body: Consumer<QuizListController>(
           builder: (context, controller, _) {
             if (controller.isLoading) {
@@ -55,12 +68,12 @@ class QuizScreen extends StatelessWidget {
                   child: controller.filteredQuizzes.isEmpty
                       ? Center(child: Text("Don't have any match!"))
                       : ListView.builder(
-                       itemCount: controller.filteredQuizzes.length,
-                       itemBuilder: (context, index) {
-                       final quiz = controller.filteredQuizzes[index];
-                       final score = controller.resultScore[quiz.quizId] ?? 0;
+                    itemCount: controller.filteredQuizzes.length,
+                    itemBuilder: (context, index) {
+                      final quiz = controller.filteredQuizzes[index];
+                      final score = controller.resultScore[quiz.quizId] ?? 0;
 
-                       return QuizItem(
+                      return QuizItem(
                         title: quiz.title,
                         score: score,
                         color: colorsOption[index % colorsOption.length],
@@ -77,13 +90,13 @@ class QuizScreen extends StatelessWidget {
           builder: (context, controller, _) {
             if (!controller.isTeacher) return SizedBox.shrink();
             return Column(
-                 mainAxisSize: MainAxisSize.min,
-                 children: [
-                   FloatingActionButton(
-                   heroTag: 'fab_manage',
-                   backgroundColor: Color(0xFFFFD1BF),
-                   child: Icon(Icons.note, color: Colors.black),
-                   onPressed: () async {
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FloatingActionButton(
+                  heroTag: 'fab_manage',
+                  backgroundColor: Color(0xFFFFD1BF),
+                  child: Icon(Icons.note, color: Colors.black),
+                  onPressed: () async {
                     final result = await Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/StudySet/StudySetsScreen.dart';
 import 'package:hand_sign/views/detection/detection_screen.dart';
 import 'package:hand_sign/views/dictionary/SearchScreen.dart';
 import 'package:hand_sign/views/flashcard/flashcard.dart';
@@ -34,6 +35,12 @@ class MenuScreen extends StatelessWidget {
               MaterialPageRoute(builder: (context) => PracticeScreen()), // Chuyển sang màn hình Menu
             );
           }
+          if (index == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StudySetsPage()), // Chuyển sang màn hình Menu
+            );
+          }
           if (index == 4) {
             Navigator.push(
               context,
@@ -45,7 +52,7 @@ class MenuScreen extends StatelessWidget {
           buildNavItem('assets/icons/home.png', 'Home'),
           buildNavItem('assets/icons/point.png', 'Practice'),
           buildNavItem('assets/icons/open-menu.png', 'Menu'),
-          buildNavItem('assets/icons/book.png', 'Study'),
+          buildNavItem('assets/icons/book.png', 'Studyset'),
           buildNavItem('assets/icons/user.png', 'Profile'),
         ],
       ),
