@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hand_sign/views/flashcard/memory.dart';
+import '../../models/Users.dart';
 import '../Home/HomeScreen.dart';
 import '../../models/FlashCard.dart';
+import '../Practice/PracticeScreen.dart';
+import '../menu/menu.dart';
 import './gesture_matching.dart';
 import './reflex.dart';
 import '../../controllers/LevelManager.dart';
@@ -17,7 +20,7 @@ class FlashCardScreen extends StatefulWidget {
 class _FlashCardScreenState extends State<FlashCardScreen> {
   final Color primaryColor = Color(0xFFFF6F00); // Màu cam chính
   List<bool> levelUnlocked = [true, false, false, false]; // default tạm
-  final currentUser = FirebaseAuth.instance.currentUser;
+  final currentUser = Users.currentUser;
 
   @override
   void initState() {
@@ -169,14 +172,23 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
         showUnselectedLabels: true,
         currentIndex: 1, // Index tương ứng với màn FlashCard (Practice)
         onTap: (index) {
-          if (index == 0 || index == 2) {
+          if (index == 0) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => HomeScreen()),
             );// hoặc dùng MaterialPageRoute nếu chưa định tuyến
           }
           if (index == 1) {
-            // Đã ở trang hiện tại
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PracticeScreen()),
+            );
+          }
+          if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MenuScreen()),
+            );
           }
           if (index == 4) {
             Navigator.push(

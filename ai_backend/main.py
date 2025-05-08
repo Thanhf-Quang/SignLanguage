@@ -47,7 +47,7 @@ def predict():
 
         return jsonify(predicted_character)
 
-    return jsonify("Không tìm thấy tay!"), 200  # Trả về chuỗi rỗng nếu không nhận diện được
+    return jsonify("No hand detection!"), 200  # Trả về chuỗi rỗng nếu không nhận diện được
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
