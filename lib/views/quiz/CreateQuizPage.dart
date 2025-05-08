@@ -93,7 +93,7 @@ class _CreateQuizPageState extends State<CreateQuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Create a Quiz', , showBackButton: false,),
+      appBar: CustomAppBar(title: 'Create a Quiz', showBackButton: false,),
       body: Stack(
         children: [
           Padding(
