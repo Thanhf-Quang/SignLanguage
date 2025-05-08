@@ -120,7 +120,7 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> {
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Không thể tải thông tin chi tiết.")),
+                        const SnackBar(content: Text("Can't load item details.")),
                       );
                     }
                   },

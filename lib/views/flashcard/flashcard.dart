@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/StudySet/StudySetsScreen.dart';
 import 'package:hand_sign/views/flashcard/memory.dart';
 import '../../models/Users.dart';
 import '../Home/HomeScreen.dart';
@@ -57,9 +58,6 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
                   Row(
                     children: [
                       Icon(Icons.star, color: Colors.amber),
-                      Text("2  "),
-                      Icon(Icons.bookmark, color: Colors.pink),
-                      Text("0"),
                     ],
                   )
                 ],
@@ -152,7 +150,7 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
                         isUnlocked: levelUnlocked[3],
                         level: 4,
                         onTap: () {
-                          debugPrint("đến trang 4");
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => ReflexScreen()));
                         },
                       ),
                     ),
@@ -190,6 +188,12 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
               MaterialPageRoute(builder: (context) => MenuScreen()),
             );
           }
+          if (index == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StudySetsPage()),
+            );
+          }
           if (index == 4) {
             Navigator.push(
               context,
@@ -201,7 +205,7 @@ class _FlashCardScreenState extends State<FlashCardScreen> {
           buildNavItem('assets/icons/home.png', 'Home'),
           buildNavItem('assets/icons/point.png', 'Practice'),
           buildNavItem('assets/icons/open-menu.png', 'Menu'),
-          buildNavItem('assets/icons/book.png', 'Study'),
+          buildNavItem('assets/icons/book.png', 'Studyset'),
           buildNavItem('assets/icons/user.png', 'Profile'),
         ],
       ),

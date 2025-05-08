@@ -161,10 +161,11 @@ class _StudySetsPageState extends State<StudySetsPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.person, color: Colors.white),
+              Icon(Icons.play_arrow, color: Colors.white),
               SizedBox(width: 6),
               Text(
-                "Theo ${set['createBy'] ?? '---'}",
+                // "By ${set['createBy'] ?? '---'}",
+                "Start",
                 style: TextStyle(color: Colors.white),
               ),
             ],
@@ -203,9 +204,13 @@ class _StudySetsPageState extends State<StudySetsPage> {
             SizedBox(height: 8),
             Row(
               children: [
-                Icon(Icons.person, size: 16, color: Colors.grey),
+                Icon(Icons.play_arrow, size: 20, color: Colors.grey),
                 SizedBox(width: 4),
-                Text("Theo ${set["createBy"] ?? '---'}", style: TextStyle(fontSize: 12)),
+                Text(
+                    // "By ${set["createBy"] ?? '---'}",
+                    "Start",
+                    style: TextStyle(fontSize: 18)
+                ),
               ],
             ),
             Spacer(),

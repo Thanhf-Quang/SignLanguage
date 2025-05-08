@@ -10,7 +10,7 @@ class StudySetService {
     required String category,
     required List<String> studyItemIds,
     required bool isPublic,
-    String? userId, // tùy chọn
+    required String userId, // tùy chọn
   }) async {
     final studySetData = {
       'title': title,

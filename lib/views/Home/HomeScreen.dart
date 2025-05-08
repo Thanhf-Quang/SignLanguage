@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hand_sign/views/StudySet/NewStudySetScreen.dart';
 import 'package:hand_sign/views/dictionary/SearchScreen.dart';
+import 'package:hand_sign/views/login/login.dart';
 import 'package:hand_sign/views/quiz/QuizScreen.dart';
+import '../../models/Users.dart';
 import '../notes/notes.dart';
 import '../flashcard/flashcard.dart';
 import '../Practice/PracticeScreen.dart';
@@ -12,6 +15,7 @@ import '../menu/menu.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
+  final currentUser = Users.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,12 @@ class HomeScreen extends StatelessWidget {
               MaterialPageRoute(builder: (context) => MenuScreen()),
             );
           }
+          if (index == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StudySetsPage()),
+            );
+          }
           if (index == 4) {
             Navigator.push(
               context,
@@ -46,7 +56,7 @@ class HomeScreen extends StatelessWidget {
           buildNavItem('assets/icons/home.png', 'Home'),
           buildNavItem('assets/icons/point.png', 'Practice'),
           buildNavItem('assets/icons/open-menu.png', 'Menu'),
-          buildNavItem('assets/icons/book.png', 'Study'),
+          buildNavItem('assets/icons/book.png', 'Studyset'),
           buildNavItem('assets/icons/user.png', 'Profile'),
         ],
       ),
@@ -89,7 +99,7 @@ class HomeScreen extends StatelessWidget {
 
             SizedBox(height: 10),
             Container(
-              height: 180,
+              height: 230,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
@@ -126,19 +136,22 @@ class HomeScreen extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => FlashCardScreen()),
                           );
                         }),
-                        categoryItem('Study', 'assets/icons/book.png', Colors.orange, () {
-                          // TODO: Gọi StudyScreen
+                        categoryItem('Study', 'assets/icons/learn.png', Colors.orange, () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => PracticeScreen()),
+                          );
                         }),
-                        categoryItem('Quiz Test', 'assets/icons/quiz.png', Colors.brown, () {
+                        categoryItem('Quiz Test', 'assets/icons/quiz.png', Colors.pink, () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => QuizScreen()),
                           );
                         }),
-                        categoryItem('Dictionary', 'assets/icons/dictionary.png', Colors.pink, () {
+                        categoryItem('Other', 'assets/icons/other.png', Colors.redAccent, () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => DictionaryScreen()),
+                            MaterialPageRoute(builder: (context) => MenuScreen()),
                           );
                         }),
                       ],
@@ -168,21 +181,66 @@ class HomeScreen extends StatelessWidget {
               spacing: 10,
               runSpacing: 10,
               children: [
-                taskItem('Create Study Set', 'assets/icons/book.png', 180, () {
+                taskItem('Create Study Sets', 'assets/icons/book.png', 180, () {
+                  if(currentUser != null){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StudySetScreen()),
+                    );
+                  }else{
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          backgroundColor: Color(0xFFFFF8EE),
+                          title: const Text('Warning',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),),
+                          content: const Text('You need to login to create a study set!',textAlign: TextAlign.center),
+                          actions: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  TextButton(
+                                    child: Text("Cancel", style: TextStyle(color: Color(0xFF4E3715))),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFF4E3715),
+                                    ),
+                                    child: Text("Ok, go to login", style: TextStyle(color: Colors.white)),
+                                    onPressed: () {
+                                      Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                }),
+                taskItem('Dictionary', 'assets/icons/dictionary.png', 180, () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => StudySetsPage()),
+                    MaterialPageRoute(builder: (context) => DictionaryScreen()),
                   );
                 }),
-                taskItem('Topic Test', 'assets/icons/check.png', 180, () {}),
-                taskItem('Quiz Test', 'assets/icons/quiz.png', 180, () {}),
-                taskItem('My Notes', 'assets/icons/note.png', 180, () {
+                taskItem('My Notes', 'assets/icons/note.png', 370, () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => NotesScreen()),
                   );
                 }),
-                taskItem('Practice by Topic', 'assets/icons/trending.png', 370, () {}),
               ],
             ),
           ],
@@ -220,11 +278,11 @@ class HomeScreen extends StatelessWidget {
       onTap: onTap, // Xử lý sự kiện nhấn vào
       child: Container(
         width: width,
-        height: 70, // Giảm kích thước Task Item
+        height: 110, // Giảm kích thước Task Item
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
