@@ -181,7 +181,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           IconButton(
             icon: Icon(Icons.logout, color: Color(0xFFFF721A)),
             onPressed: () {
-              Users.currentUser = null;
+
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
@@ -208,6 +208,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               ),
                               child: Text("Yes, log out", style: TextStyle(color: Colors.white)),
                               onPressed: () async {
+                                Users.currentUser = null;
                                 Navigator.of(context).pop();
                                 await FirebaseAuth.instance.signOut();
                                 Navigator.pushReplacement(

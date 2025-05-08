@@ -8,6 +8,7 @@ import '../StudySet/StudySetsScreen.dart'; // Import màn hình cần điều h�
 import '../profile/edit_profile.dart';
 import '../detection/detection_screen.dart';
 import 'package:camera/camera.dart';
+import '../menu/menu.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -20,12 +21,18 @@ class HomeScreen extends StatelessWidget {
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
-        currentIndex: 2, // Đặt mặc định ở "Home"
+        currentIndex: 0, // Đặt mặc định ở "Home"
         onTap: (index) {
           if (index == 1) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => PracticeScreen()),
+            );
+          }
+          if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MenuScreen()),
             );
           }
           if (index == 4) {
