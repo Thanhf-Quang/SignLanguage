@@ -43,6 +43,7 @@ class StudySetScreenState extends State<StudySetScreen> {
         studyItemIds: items.map((e) => e.id).toList(),
         isPublic: isPublic,
       );
+      print('onclick Hoan tất');
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Lưu thành công!")),
