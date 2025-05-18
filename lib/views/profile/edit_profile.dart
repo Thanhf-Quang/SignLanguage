@@ -71,7 +71,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           _imageFile = image;
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Cập nhật ảnh đại diện thành công!')),
+          SnackBar(content: Text('Image uploaded successfully!')),
         );
         await _loadUser();
       }
@@ -179,7 +179,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         backgroundColor: Color(0xFFFFF8EE),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout, color: Color(0xFFFF721A)),
+            icon: Icon(Icons.logout, color: Color(0xFF4E3715)),
             onPressed: () {
               showDialog(
                 context: context,

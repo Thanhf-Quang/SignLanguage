@@ -66,7 +66,7 @@ class _ReflexScreenState extends State<ReflexScreen> {
     if (model.isFinished) {
       setState(() {
         gameFinished = true;
-        LevelManager.unlockLevel(2); // Level 2 -> mở khóa level 3
+        LevelManager.unlockLevel(1);
       });
       return;
     }

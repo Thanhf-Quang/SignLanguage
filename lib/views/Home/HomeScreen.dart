@@ -66,6 +66,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// Header
+            SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -83,23 +84,22 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: 10),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: Icon(Icons.search, color: Colors.grey),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
+            // TextField(
+            //   decoration: InputDecoration(
+            //     hintText: 'Search',
+            //     prefixIcon: Icon(Icons.search, color: Colors.grey),
+            //     filled: true,
+            //     fillColor: Colors.white,
+            //     border: OutlineInputBorder(
+            //       borderRadius: BorderRadius.circular(30),
+            //       borderSide: BorderSide.none,
+            //     ),
+            //   ),
+            // ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Container(
-              height: 230,
+              height: 220,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(

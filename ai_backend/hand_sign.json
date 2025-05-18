@@ -1,0 +1,850 @@
+{
+    "PracticeTopics": {
+        "4eErJyLSK917UhRDuM1K": {
+            "symbolTopic": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746679030/wild-animals_v8j1nt.png",
+            "topicID": "prttp03animals",
+            "topicTitle": "Animals",
+            "keywords": [
+                "all89927tr",
+                "9420dolp28402888",
+                "sqr9487ksp"
+            ]
+        },
+        "61lmHVSvlNqReck0qhQQ": {
+            "symbolTopic": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746677053/alphabet_yosi7e.png",
+            "topicID": "prttp01",
+            "topicTitle": "Alphabet",
+            "keywords": [
+                "23922bxma23344",
+                "2894jks29077"
+            ]
+        },
+        "QrgURa65oyEqnPZJAMV9": {
+            "symbolTopic": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746678919/timetable_lszvpr.png",
+            "topicID": "prttp04Calendar",
+            "topicTitle": "Calendar",
+            "keywords": [
+                "tmr8409525",
+                "tuesd930248"
+            ]
+        },
+        "XFGh6AD91ipDd61ZH5T3": {
+            "symbolTopic": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746677058/weather_xlkgcp.png",
+            "topicTitle": "Weather",
+            "topicID": "prttp05weather",
+            "keywords": [
+                "cold9349222",
+                "rain394200",
+                "390smm2840lks"
+            ]
+        },
+        "ixhRlILXqVJlJhhLmLAN": {
+            "symbolTopic": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746678808/cuisine_ahk0bv.png",
+            "topicID": "prttp02",
+            "topicTitle": "Cuisine",
+            "keywords": [
+                "774tn2090146",
+                "094788ksh3743",
+                "bt9359butter39503",
+                "793cake9488",
+                "b802nn9203677"
+            ]
+        }
+    },
+    "StudyItem": {
+        "0IpN6MiiieNahP3egqJk": {
+            "description": "Alphabet A",
+            "topic": "prttp01",
+            "itemID": "23922bxma23344",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746673182/handsigninga_vcqnie.gif",
+            "keyword": "A"
+        },
+        "2RkOIvDmYMkx8stJRHsB": {
+            "description": "A small animal covered in fur with a long tail. Squirrels climb trees and feed on nuts and seeds",
+            "topic": "prttp03animals",
+            "itemID": "sqr9487ksp",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746675381/squirrel_tjf7vg.gif",
+            "keyword": "Squirrel"
+        },
+        "33rlhMPkAbqVsI4LQMAc": {
+            "description": "A long, curved fruit with a yellow skin and soft, sweet, white flesh inside",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746674040/banana_ybo1ee.gif",
+            "itemID": "b802nn9203677",
+            "topic": "prttp02",
+            "keyword": "Banana"
+        },
+        "8N4IlVic5mbKR7GxZkQt": {
+            "description": "A pale yellow solid food & made from cream and is spread on bread or used in cooking.",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746673621/butter_sstruh.gif",
+            "itemID": "bt9359butter39503",
+            "topic": "prttp02",
+            "keyword": "Butter"
+        },
+        "9CcrGWRGqcdHoN5k7SOH": {
+            "description": "Not quite; very nearly",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746505680/almost_gd26nx.gif",
+            "itemID": "3u213290s",
+            "topic": "",
+            "keyword": "Almost"
+        },
+        "9DPlpMR0IHPcnMvptg1N": {
+            "description": "On the day after today",
+            "topic": "prttp04Calendar",
+            "itemID": "tmr8409525",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746675794/tomorrow_hnmkgu.gif",
+            "keyword": "Tomorrow"
+        },
+        "BZOdocQC5ZDZfVvg8KMl": {
+            "description": "A sea mammal that is large, smooth, and grey, with a long, pointed mouth",
+            "topic": "prttp03animals",
+            "itemID": "9420dolp28402888",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746675112/dolphin_tusgqo.gif",
+            "keyword": "Dolphin"
+        },
+        "FpDZbou8B54l57Of5hzU": {
+            "description": "The sign for \"cold\" means \"cold temperature.\"  It doesn't mean \"to have a head-cold\" or to be sick. Use your arms to represent shivering.",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746676283/cold-winter_ubjhhb.gif",
+            "itemID": "cold9349222",
+            "topic": "prttp05weather",
+            "keyword": "Cold"
+        },
+        "Il77OBVhMcqQkzBA1VLF": {
+            "description": "Such as: Potato chips, tomato chips,...",
+            "topic": "prttp02",
+            "itemID": "094788ksh3743",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746673438/chips_hoj6s8.gif",
+            "keyword": "Chips"
+        },
+        "L6ZJlmxhcDnQn1nRcoPk": {
+            "topic": "",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746505626/careless_dwswym.gif",
+            "itemID": "830dma22213",
+            "discription": "Not giving sufficient attention or thought to avoiding harm or errors",
+            "keyword": "Careless"
+        },
+        "NfV6qw58e6yIvkdRz5kM": {
+            "description": "To make or become calm...",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746505471/calm-down_a3hlca.gif",
+            "itemID": "ukd2489235",
+            "topic": "",
+            "keyword": "Calm-down"
+        },
+        "VSfunJraVsmCNXNdRdv0": {
+            "description": "A large reptile with a hard skin that lives in and near rivers and lakes in the hot, wet parts of America and China. It has a long nose that is slightly wider and shorter than that of a crocodile.",
+            "topic": "prttp03animals",
+            "itemID": "all89927tr",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746674918/alligator_uokw5g.gif",
+            "keyword": "Alligator"
+        },
+        "dVlFtPXoGkGceQIQU49i": {
+            "description": "delicious, good, tasty",
+            "topic": "prttp02",
+            "itemID": "774tn2090146",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746673133/delicious_rlzafs.gif",
+            "keyword": "Delicious"
+        },
+        "gsDv7qhY4K7mjxvLo6M8": {
+            "description": "Drops of water from clouds",
+            "topic": "prttp05weather",
+            "itemID": "rain394200",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746676471/rain_e0q5dw.gif",
+            "keyword": "Rain"
+        },
+        "mL7prBimqCP2KJPXR6mY": {
+            "description": "Alphabet B",
+            "topic": "prttp01",
+            "itemID": "2894jks29077",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746673182/handsigningb_wflqrg.gif",
+            "keyword": "B"
+        },
+        "rhodMqGltjDOBm4Tlo3Q": {
+            "description": "The season of the year between spring and autumn when the weather is warmest, lasting from June to September north of the equator and from December to March south of the equator.",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746676575/summer_tpodgr.gif",
+            "itemID": "390smm2840lks",
+            "topic": "prttp05weather",
+            "keyword": "Summer"
+        },
+        "tOs6KCD388fx1fHTMZnJ": {
+            "description": "A sweet food made with a mixture of flour, eggs, fat, and suga",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746673843/cake_c2ogwm.gif",
+            "itemID": "793cake9488",
+            "topic": "prttp02",
+            "keyword": "Cake"
+        },
+        "vfUApGC26Cp7Ub8uI0ca": {
+            "description": "The day of the week after Monday and before Wednesday",
+            "videoUrl": "https://res.cloudinary.com/dzlmxrlxh/image/upload/v1746675871/week-tuesday_qcolyn.gif",
+            "itemID": "tuesd930248",
+            "topic": "prttp04Calendar",
+            "keyword": "Tuesday"
+        }
+    },
+    "StudySet": {
+        "0if8hRGqdY5twPq9dZYW": {
+            "createBy": "",
+            "id": "1746702314793",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.699000+00:00"
+        },
+        "1eov8Arh8KgwuMkOVuUB": {
+            "createBy": "",
+            "id": "1746702050823",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:10.824000+00:00"
+        },
+        "6gmVneubVD4ExAlIOywm": {
+            "createBy": "",
+            "id": "1746701608226",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:09.930000+00:00"
+        },
+        "8q7sxSilXPxB80DtZhqk": {
+            "createBy": "",
+            "id": "1746702176136",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.099000+00:00"
+        },
+        "AbFXb00riEkBIjke6QOL": {
+            "createBy": "",
+            "id": "1746701609177",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.040000+00:00"
+        },
+        "AdJUTTcZOsKH5bD5nbPi": {
+            "createBy": "",
+            "id": "1746674538023",
+            "isPublic": false,
+            "category": "Food",
+            "studyItems": [
+                "793cake9488",
+                "bt9359butter39503",
+                "b802nn9203677"
+            ],
+            "title": "Topic about food",
+            "statement": "Completed!",
+            "scores": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "createAt": "2025-05-08T03:22:19.514000+00:00"
+        },
+        "DSF4etTKB4gGlr4hVo95": {
+            "createBy": "",
+            "id": "1746702177223",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.397000+00:00"
+        },
+        "Dk6GZ6sBuAh9P9dLGJhn": {
+            "createBy": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "id": "1746721602422",
+            "isPublic": true,
+            "category": "animal",
+            "studyItems": [
+                "all89927tr",
+                "9420dolp28402888"
+            ],
+            "title": "bcde",
+            "statement": "Practicing in progress...",
+            "scores": [
+                0.29,
+                0.0
+            ],
+            "createAt": "2025-05-08T16:26:43.137000+00:00"
+        },
+        "FCmb8E3oPE6mQ2RMWZYS": {
+            "createBy": "",
+            "id": "1746702111959",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:10.995000+00:00"
+        },
+        "H1ZCPFWEFwIh0Ot7g0SQ": {
+            "createBy": "",
+            "id": "1746702112233",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.049000+00:00"
+        },
+        "IJRmxgznmkzyBDfEU9PW": {
+            "createBy": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "id": "1746723623801",
+            "isPublic": true,
+            "category": "Animal",
+            "studyItems": [
+                "all89927tr",
+                "9420dolp28402888"
+            ],
+            "title": "Animal Learn",
+            "statement": "Completed!",
+            "scores": [
+                0.27,
+                0.34
+            ],
+            "createAt": "2025-05-08T17:00:24.433000+00:00"
+        },
+        "Iwr4QGrzGilknUynDAmU": {
+            "createBy": "",
+            "id": "1746702176964",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.346000+00:00"
+        },
+        "JMwXDNqb5J9WB064X1lm": {
+            "createBy": "",
+            "id": "1746702111659",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:10.968000+00:00"
+        },
+        "JaOiNylEoe4HxWxcSgIl": {
+            "createBy": "",
+            "id": "1746701626599",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.330000+00:00"
+        },
+        "LLh13iEHRfCjnSmB9RXM": {
+            "createBy": "",
+            "id": "1746701551893",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:09.715000+00:00"
+        },
+        "MZFDJP0Y7H8Vshq9GLUR": {
+            "createBy": "",
+            "id": "1746702020284",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:10.773000+00:00"
+        },
+        "O8QaztTFJ2y9YqFSm8rv": {
+            "createBy": "",
+            "id": "1746701608933",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.014000+00:00"
+        },
+        "RDqYNm0Jp83yG3iaRAj9": {
+            "createBy": "",
+            "id": "1746702112466",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.075000+00:00"
+        },
+        "U5TFZ7lkxIkEwG3qIA2x": {
+            "createBy": "",
+            "id": "1746702648858",
+            "isPublic": false,
+            "category": "calendar topic",
+            "studyItems": [
+                "tmr8409525"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:10:56.684000+00:00"
+        },
+        "UrsifqTKvCwiQje0P27b": {
+            "createBy": "",
+            "id": "139203022",
+            "isPublic": true,
+            "category": "Hand Sign",
+            "studyItems": [
+                "3u213290s",
+                "ukd2489235"
+            ],
+            "title": "Study set 01",
+            "statement": "Not complete",
+            "scores": [
+                0.34,
+                0.52
+            ],
+            "createAt": "2025-04-09T10:37:41.626000+00:00"
+        },
+        "V140v1lHZ7ys1IwFW508": {
+            "createBy": "",
+            "id": "1746701573019",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:09.871000+00:00"
+        },
+        "V510zScSBTFcjonwSzkg": {
+            "createBy": "",
+            "id": "1746701609342",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.093000+00:00"
+        },
+        "XR6N65koLot0QJcL3tDr": {
+            "createBy": "",
+            "id": "1746701609703",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.219000+00:00"
+        },
+        "bZg9t5UW1WnmNhvU2i06": {
+            "createBy": "",
+            "id": "1746701565033",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:09.785000+00:00"
+        },
+        "chNirVBgwvUH0m4ieE34": {
+            "createBy": "",
+            "id": "1746541018351",
+            "isPublic": false,
+            "category": "Handsign",
+            "studyItems": [
+                "ukd2489235"
+            ],
+            "title": "Study04",
+            "statement": "Completed!",
+            "scores": [
+                0.15
+            ],
+            "createAt": "2025-05-06T14:17:05.283000+00:00"
+        },
+        "cv7Z4jEBFqx2E6CM1zxn": {
+            "createBy": "",
+            "id": "1746701626041",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.304000+00:00"
+        },
+        "cww8wpomNn88wXsZlfSP": {
+            "createBy": "",
+            "id": "1746702176650",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.152000+00:00"
+        },
+        "e4s8JNc1LLHeBH4UCwbK": {
+            "createBy": "",
+            "id": "1746702611205",
+            "isPublic": true,
+            "category": "others",
+            "studyItems": [
+                "793cake9488",
+                "rain394200"
+            ],
+            "title": "practice 02",
+            "createAt": "2025-05-08T11:10:19.624000+00:00"
+        },
+        "glIvpSExJtu9yYvsqRue": {
+            "createBy": "",
+            "id": "1746701680494",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.393000+00:00"
+        },
+        "hC3I741lDwDM6q7Zc8Bo": {
+            "createBy": "",
+            "id": "1746702299548",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:11.446000+00:00"
+        },
+        "jVzn3S5SJMC8qLG1hmiR": {
+            "createBy": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "id": "1746722843821",
+            "isPublic": true,
+            "category": "animal",
+            "studyItems": [
+                "all89927tr",
+                "9420dolp28402888"
+            ],
+            "title": "animal test",
+            "statement": "Completed!",
+            "scores": [
+                0.71,
+                0.55
+            ],
+            "createAt": "2025-05-08T16:47:24.495000+00:00"
+        },
+        "kEjDvuYqGFVXYs7rTZNB": {
+            "createBy": "",
+            "id": "1746702111090",
+            "isPublic": true,
+            "category": "practice",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Calendar",
+            "createAt": "2025-05-08T11:09:10.848000+00:00"
+        },
+        "kKCgxhJRfuQfxVUegVjo": {
+            "createBy": "",
+            "id": "1746363102108",
+            "isPublic": true,
+            "category": "HandSign",
+            "studyItems": [
+                "3u213290s",
+                "ukd2489235"
+            ],
+            "title": "StudySet001",
+            "statement": "Not complete",
+            "scores": [
+                0.88,
+                0.25
+            ],
+            "createAt": "2025-05-04T12:51:42.976000+00:00"
+        },
+        "kMuaHUMGivnKATEc1UjU": {
+            "createBy": "",
+            "id": "1746701705375",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.711000+00:00"
+        },
+        "mgxg6spfCJbk8oEk6EjT": {
+            "createBy": "",
+            "id": "1746702507079",
+            "isPublic": true,
+            "category": "hand sign",
+            "studyItems": [
+                "3u213290s"
+            ],
+            "title": "practice 1",
+            "createAt": "2025-05-08T11:09:11.749000+00:00"
+        },
+        "nJZaNsSZQUmJsvJnagyh": {
+            "createBy": "",
+            "id": "1746701609488",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.166000+00:00"
+        },
+        "pu5YcQmhGDaSa2FxLxYB": {
+            "createBy": "",
+            "id": "1746364284170",
+            "isPublic": true,
+            "category": "HandSign",
+            "studyItems": [
+                "830dma22213",
+                "ukd2489235"
+            ],
+            "title": "StudySet003",
+            "statement": "Completed!",
+            "scores": [
+                0.44,
+                0.42
+            ],
+            "createAt": "2025-05-04T13:11:26.135000+00:00"
+        },
+        "qvqMEtGConi1QIyhGRmR": {
+            "createBy": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "id": "1746719022462",
+            "isPublic": true,
+            "category": "animal",
+            "studyItems": [
+                "all89927tr",
+                "9420dolp28402888"
+            ],
+            "title": "abc",
+            "createAt": "2025-05-08T15:43:49.454000+00:00"
+        },
+        "r45GnAwVVMBjPwh0H6Ug": {
+            "createBy": "",
+            "id": "1746701625066",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:10.244000+00:00"
+        },
+        "r4krIvNQSARnemKxIFA2": {
+            "createBy": "",
+            "id": "1746702816549",
+            "isPublic": false,
+            "category": "hand sign",
+            "studyItems": [
+                "3u213290s",
+                "sqr9487ksp",
+                "bt9359butter39503",
+                "830dma22213"
+            ],
+            "title": "topic test",
+            "statement": "Completed!",
+            "scores": [
+                0.4,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "createAt": "2025-05-08T11:13:44.566000+00:00"
+        },
+        "rgRBLjsjVDMG3PUiNZvY": {
+            "createBy": "",
+            "id": "1746701542499",
+            "isPublic": false,
+            "category": "Calendar",
+            "studyItems": [
+                "tmr8409525",
+                "tuesd930248"
+            ],
+            "title": "Practice with Calendar",
+            "createAt": "2025-05-08T11:09:09.657000+00:00"
+        }
+    },
+    "quizResult": {
+        "7hpReytnBYgxGFnmkyuw": {
+            "totalAnswer": 10,
+            "score": 9.0,
+            "completedAt": "2025-05-06T13:14:22.899000+00:00",
+            "userId": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "quizId": "1746436865558",
+            "correctAnswer": 9.0
+        },
+        "KFClmorgVOnSffm16Sg9": {
+            "totalAnswer": 10,
+            "score": 5.0,
+            "completedAt": "2025-05-06T16:15:01.997000+00:00",
+            "userId": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "quizId": "1746433885043",
+            "correctAnswer": 5.0
+        },
+        "M1xuMgq0xRV5uTZeh5PQ": {
+            "totalAnswer": 10,
+            "score": 4.0,
+            "completedAt": "2025-05-08T16:30:46.430000+00:00",
+            "userId": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "quizId": "1746707976310",
+            "correctAnswer": 4.0
+        },
+        "Xs9QPeAej9cSZvR2l4SL": {
+            "totalAnswer": 10,
+            "score": 7.0,
+            "completedAt": "2025-05-08T17:03:55.317000+00:00",
+            "userId": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "quizId": "1746436865558",
+            "correctAnswer": 7.0
+        },
+        "l7ZuMgEUPIhEKzFUUpeY": {
+            "totalAnswer": 10,
+            "score": 7.0,
+            "completedAt": "2025-05-08T15:07:56.020000+00:00",
+            "userId": "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2",
+            "quizId": "1746708584477",
+            "correctAnswer": 7.0
+        },
+        "qa4ALINQ9C0WnrMMAfPA": {
+            "totalAnswer": 10,
+            "score": 10.0,
+            "completedAt": "2025-05-06T08:15:20.828000+00:00",
+            "userId": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "quizId": "1746433885043",
+            "correctAnswer": 10.0
+        }
+    },
+    "quizzes": {
+        "1746433885043": {
+            "title": "weather vocabulary",
+            "createBy": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "typeOfQuiz": "vocabulary"
+        },
+        "1746436865558": {
+            "title": "Basic digits",
+            "createBy": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "typeOfQuiz": "Digits"
+        },
+        "1746707976310": {
+            "title": "Basic digits (continute)",
+            "createBy": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "typeOfQuiz": "Digits"
+        },
+        "1746708584477": {
+            "title": "Basic letters",
+            "createBy": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "typeOfQuiz": "Letters"
+        },
+        "1746709054732": {
+            "title": "Basic letters (continute)",
+            "createBy": "sfxWNer6FcgJxRhXj5DEBFzbbX63",
+            "typeOfQuiz": "Letters"
+        }
+    },
+    "users": {
+        "OcaWT9RBJ6bQgmQlrZL7iQZ1vhV2": {
+            "avtURL": "https://res.cloudinary.com/dmdcyhkkl/image/upload/v1746724102/zwcsv1eezpyafmn0bvlv.jpg",
+            "progress": {
+                "flashcards": [
+                    true,
+                    true,
+                    true,
+                    false
+                ]
+            },
+            "phone": "7QFmUqR3pWpn3DAbp3M0bg==",
+            "role": "Student",
+            "birthday": "01/10/2004",
+            "email": "rEU1D/cs9DJt1gcr4RJfCRD6nBiUUPv5QnjMUthNUAU=",
+            "name": "Thanh Quang"
+        },
+        "sfxWNer6FcgJxRhXj5DEBFzbbX63": {
+            "avtURL": "https://res.cloudinary.com/dmdcyhkkl/image/upload/v1746602366/j7fqig81uwhwr3v8z2zy.jpg",
+            "role": "Teacher",
+            "birthday": "",
+            "email": "tR46BuU7/Wxt1gcvkjVVBRj/3lWYUpz6QXvPUdtOUwY=",
+            "phone": "7QFmUqR3pWpn3DAbp3M0bg==",
+            "name": "huong"
+        },
+        "tiNn2DW4pfadnvBtZtoBD47ugN93": {
+            "avtURL": "https://res.cloudinary.com/dmdcyhkkl/image/upload/v1746109808/oq4jbsjgqytaztschvhw.jpg",
+            "progress": {
+                "flashcards": [
+                    true,
+                    true,
+                    false,
+                    false
+                ]
+            },
+            "phone": "7QFmUqR3pWpn3DAbp3M0bg==",
+            "role": "Student",
+            "birthday": "",
+            "email": "rEU1D/cs53Nt119pwzVEAwy4xx+VE4edQHrOUNpPUgc=",
+            "name": "Ngo Thanh Quang"
+        },
+        "zWw1ULL3wTZH3M8yDVhZrXowAfQ2": {
+            "avtURL": "",
+            "name": "phann guyen",
+            "birthday": "",
+            "email": "rVg1D/4l5iQ6iwYskEUCKB770xKXE5KcJXXBX9VAXQg=",
+            "phone": "7QFmUqR3pWpn0zAbp3M0bg==",
+            "role": "student"
+        }
+    }
+}

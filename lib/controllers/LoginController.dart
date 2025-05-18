@@ -25,7 +25,7 @@ class LoginController {
 
       await LoginService.loginUser(email: email, password: password);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Login successful!")),
+        SnackBar(content: Text("Login successful!"), backgroundColor: Colors.green,),
       );
       //chuyển hướng màn hình chính
       Navigator.push(context, MaterialPageRoute(builder: (_)=> HomeScreen()));
@@ -48,7 +48,7 @@ class LoginController {
     try {
       await _emailService.sendPasswordResetEmail(email.trim().toLowerCase());
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Password reset email sent. Please check your inbox."))
+          SnackBar(content: Text("Password reset email sent. Please check your inbox."), backgroundColor: Colors.green,)
       );
       Navigator.push(context, MaterialPageRoute(builder: (_)=> LoginScreen()));
     } catch (e) {

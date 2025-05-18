@@ -19,18 +19,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _rePasswordController = TextEditingController();
 
   void checkValidInfor(
-       String username,
-       String phone,
-       String email,
-       String password,
-       String rePass,
+      String username,
+      String phone,
+      String email,
+      String password,
+      String rePass,
       ) async{
 
     final error = RegisterController.checkVailidInfor(username: username, phone: phone, email: email, password: password, rePass: rePass);
 
     if (error != null) {
-       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error)));
-       return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error)));
+      return;
     }
 
     try{
@@ -78,38 +78,41 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     topRight: Radius.circular(40),
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    _buildInputField(Icons.person, "Full name", _usernameController),
-                    const SizedBox(height: 20),
-                    _buildInputField(Icons.phone, "Phone", _phoneController),
-                    const SizedBox(height: 20),
-                    _buildInputField(Icons.email, "Email", _emailController),
-                    const SizedBox(height: 20),
-                    _buildPasswordField("Password", _passwordController),
-                    const SizedBox(height: 20,),
-                    _buildPasswordField("Confirm password", _rePasswordController),
-                    const SizedBox(height: 40,),
-                    
-                    //button
-                    CustomButton(
-                        text: "Sign up",
-                        textColor: Colors.white, 
-                        gradientColors: [Color(0xFFE53935), Color(0xFFFF7043)], 
-                        onPressed: (){
-                          checkValidInfor(
-                              _usernameController.text,
-                              _phoneController.text,
-                              _emailController.text,
-                              _passwordController.text,
-                              _rePasswordController.text
-                          );
-                        }
-                    ),
-                    const SizedBox(height: 90,),
-                    _buildSigninText(),
-                  ],
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      _buildInputField(Icons.person, "Full name", _usernameController),
+                      const SizedBox(height: 20),
+                      _buildInputField(Icons.phone, "Phone", _phoneController),
+                      const SizedBox(height: 20),
+                      _buildInputField(Icons.email, "Email", _emailController),
+                      const SizedBox(height: 20),
+                      _buildPasswordField("Password", _passwordController),
+                      const SizedBox(height: 20,),
+                      _buildPasswordField("Confirm password", _rePasswordController),
+                      const SizedBox(height: 40,),
+
+                      //button
+                      CustomButton(
+                          text: "Sign up",
+                          textColor: Colors.white,
+                          gradientColors: [Color(0xFFE53935), Color(0xFFFF7043)],
+                          onPressed: (){
+                            checkValidInfor(
+                                _usernameController.text,
+                                _phoneController.text,
+                                _emailController.text,
+                                _passwordController.text,
+                                _rePasswordController.text
+                            );
+                          }
+                      ),
+                      const SizedBox(height: 90,),
+                      _buildSigninText(),
+                    ],
+                  ),
                 ),
               ),
             ),

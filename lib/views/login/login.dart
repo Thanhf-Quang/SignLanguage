@@ -46,74 +46,89 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFFE53935),
-                Color(0xFFFF7043),
-              ],
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFFE53935),
+              Color(0xFFFF7043),
+            ],
           ),
         ),
         child: Column(
           children: [
-            const SizedBox(height: 180,),
+            const SizedBox(height: 180),
             const Text(
               "HI, PLEASE LOGIN!",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 22,
-                fontWeight: FontWeight.bold
+                fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 60,),
+            const SizedBox(height: 60),
 
+            /// ✅ Form trắng chiếm toàn bộ phần còn lại
             Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(40),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40),),
+              child: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
                   ),
+                ),
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(40),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       _buildInputField(Icons.phone, "Enter your email"),
-                      const SizedBox(height: 20,),
+                      const SizedBox(height: 20),
                       _buildPasswordField(),
                       Align(
                         alignment: Alignment.centerRight,
-                        //forgot button
                         child: TextButton(
-                            onPressed: () => resetPassword(_emailController.text.trim()),
-                            child: const Text("Forgot password?",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),)
+                          onPressed: () =>
+                              resetPassword(_emailController.text.trim()),
+                          child: const Text(
+                            "Forgot password?",
+                            style: TextStyle(
+                              color: Colors.redAccent,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        ),
-                      const SizedBox(height: 20,),
-
-                      //button login
-                      CustomButton(
-                          text: "Login",
-                          textColor: Colors.white,
-                          gradientColors: [Color(0xFFE53935), Color(0xFFFF7043)],
-                          onPressed: handleLogin
                       ),
-
-                      const Spacer(),
-                      //signup
+                      const SizedBox(height: 20),
+                      CustomButton(
+                        text: "Login",
+                        textColor: Colors.white,
+                        gradientColors: [
+                          Color(0xFFE53935),
+                          Color(0xFFFF7043)
+                        ],
+                        onPressed: handleLogin,
+                      ),
+                      const SizedBox(height: 20),
                       _buildSignupText(),
                     ],
                   ),
-                )
-            )
+                ),
+              ),
+            ),
           ],
         ),
       ),
+
     );
   }
+
 
   Widget _buildInputField(IconData icon, String hintText) {
     return TextField(
@@ -160,13 +175,13 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         const Text("Don't have an account?"),
         TextButton(
-           // handle event register
+          // handle event register
             onPressed: (){
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RegisterScreen())
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterScreen())
               );
-            }, 
+            },
             child: const Text("Sign up",style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),))
       ],
     );

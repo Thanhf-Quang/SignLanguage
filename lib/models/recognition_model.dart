@@ -7,7 +7,7 @@ class RecognitionModel {
     try {
       var request = http.MultipartRequest(
         'POST',
-        Uri.parse('http://192.168.100.151:5000/predict'),
+        Uri.parse('http://10.60.18.195:5000/predict'),
       );
       request.files.add(await http.MultipartFile.fromPath('image', imageFile.path));
       var response = await request.send();

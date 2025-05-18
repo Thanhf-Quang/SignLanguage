@@ -95,11 +95,18 @@ class _QuizTestState extends State<QuizTest> {
     return await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
+        backgroundColor: Color(0xFFFFF3EB),
         title: Text('Exit?'),
         content: Text('If you exit, your progress will not be saved.'),
         actions: [
-          TextButton(onPressed: () => Navigator.of(context).pop(false), child: Text('Stay')),
-          TextButton(onPressed: () => Navigator.of(context).pop(true), child: Text('Exit')),
+          TextButton(
+              style: TextButton.styleFrom(backgroundColor: Color(0xFFFFE0CA)) ,
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text('Stay',style: TextStyle(color: Colors.black),)
+          ),
+          TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text('Exit',style: TextStyle(color: Colors.black),)),
         ],
       ),
     ) ??

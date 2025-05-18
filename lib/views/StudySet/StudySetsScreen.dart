@@ -150,7 +150,7 @@ class _StudySetsPageState extends State<StudySetsPage> {
           ),
           SizedBox(height: 10),
           Text(
-            "Take Quiz",
+            set["title"] ?? '',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

@@ -108,7 +108,7 @@ class GestureGameView extends StatelessWidget {
 
                               if (controller.isGameComplete()) {
                                 // Đảm bảo dialog hiển thị sau khi mở khóa xong level tiếp theo
-                                LevelManager.unlockLevel(1); // mở khóa level 1 sau khi hoàn thành level 0
+                                LevelManager.unlockLevel(2); // mở khóa level
 
                                 // Chờ một chút rồi mới hiển thị dialog
                                 Future.delayed(Duration(milliseconds: 300), () {

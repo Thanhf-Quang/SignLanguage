@@ -20,7 +20,6 @@ class DottedPathPainter extends CustomPainter {
 
     final pathMetrics = path.computeMetrics();
     for (var metric in pathMetrics) {
-      // === THAY ĐỔI ĐIỀU KIỆN LẶP Ở ĐÂY ===
       // Giới hạn distance dựa trên maxLengthFactor
       while (distance < metric.length * maxLengthFactor) {
         // ==================================
